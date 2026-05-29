@@ -1,0 +1,17 @@
+{
+  "name": "Vehicle",
+  "structure": {
+    "type": "object",
+    "required": ["id", "name"],
+    "properties": {
+      "id": { "type": "string", "description": "Unique identifier representing a specific vehicle." },
+      "name": { "type": "string", "description": "Name of the vehicle." },
+      "description": { "type": "string", "description": "Short description of the vehicle and its role." },
+      "vehicle_class": { "type": "string", "description": "Class of the vehicle (e.g. Airship, Aircraft, Submarine)." },
+      "length": { "type": "string", "description": "Length of the vehicle (string — may include thousands separators)." },
+      "pilot": { "type": "string", "description": "URL reference to the person who pilots the vehicle." },
+      "films": { "type": "array", "items": { "type": "string" } },
+      "url": { "type": "string", "description": "Canonical URL of the vehicle resource." }
+    }
+  }
+}

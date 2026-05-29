@@ -1,0 +1,132 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Studio Ghibli API — Species
+  description: >-
+    Studio Ghibli API — Species. 2 operations. Lead operation: List Species.
+    Self-contained Naftiko capability covering one Studio Ghibli business surface.
+  tags:
+    - Studio Ghibli
+    - Anime
+    - Species
+  created: '2026-05-29'
+  modified: '2026-05-29'
+binds:
+  - namespace: env
+    keys: {}
+capability:
+  consumes:
+    - type: http
+      namespace: studio-ghibli-species
+      baseUri: https://ghibliapi.vercel.app
+      description: Studio Ghibli API — Species business capability. Self-contained, no shared references. Public API; no authentication required.
+      resources:
+        - name: species
+          path: /species
+          operations:
+            - name: listSpecies
+              method: GET
+              description: List Species
+              outputRawFormat: json
+              outputParameters:
+                - name: result
+                  type: object
+                  value: $.
+              inputParameters:
+                - name: fields
+                  in: query
+                  type: string
+                  description: Comma-separated list of fields to include in the response.
+                  required: false
+                - name: limit
+                  in: query
+                  type: integer
+                  description: Number of results to return (default 50; maximum 250).
+                  required: false
+        - name: species-id
+          path: /species/{id}
+          operations:
+            - name: getSpecies
+              method: GET
+              description: Get Species By Id
+              outputRawFormat: json
+              outputParameters:
+                - name: result
+                  type: object
+                  value: $.
+              inputParameters:
+                - name: id
+                  in: path
+                  type: string
+                  description: The UUID of the species.
+                  required: true
+                - name: fields
+                  in: query
+                  type: string
+                  description: Comma-separated list of fields to include in the response.
+                  required: false
+  exposes:
+    - type: rest
+      namespace: studio-ghibli-species-rest
+      port: 8080
+      description: REST adapter for Studio Ghibli API — Species. One Spectral-compliant resource per consumed operation, prefixed with /v1.
+      resources:
+        - path: /v1/species
+          name: species
+          description: REST surface for the species collection.
+          operations:
+            - method: GET
+              name: listSpecies
+              description: List Species
+              call: studio-ghibli-species.listSpecies
+              with:
+                fields: rest.fields
+                limit: rest.limit
+              outputParameters:
+                - type: object
+                  mapping: $.
+        - path: /v1/species/{id}
+          name: species-id
+          description: REST surface for a single species resource.
+          operations:
+            - method: GET
+              name: getSpecies
+              description: Get Species By Id
+              call: studio-ghibli-species.getSpecies
+              with:
+                id: rest.id
+                fields: rest.fields
+              outputParameters:
+                - type: object
+                  mapping: $.
+    - type: mcp
+      namespace: studio-ghibli-species-mcp
+      port: 9090
+      transport: http
+      description: MCP adapter for Studio Ghibli API — Species. One tool per consumed operation, routed inline through this capability's consumes block.
+      tools:
+        - name: list-species
+          description: List Species
+          hints:
+            readOnly: true
+            destructive: false
+            idempotent: true
+          call: studio-ghibli-species.listSpecies
+          with:
+            fields: tools.fields
+            limit: tools.limit
+          outputParameters:
+            - type: object
+              mapping: $.
+        - name: get-species
+          description: Get Species By Id
+          hints:
+            readOnly: true
+            destructive: false
+            idempotent: true
+          call: studio-ghibli-species.getSpecies
+          with:
+            id: tools.id
+            fields: tools.fields
+          outputParameters:
+            - type: object
+              mapping: $.

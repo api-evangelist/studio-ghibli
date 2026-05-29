@@ -1,0 +1,132 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Studio Ghibli API — Vehicles
+  description: >-
+    Studio Ghibli API — Vehicles. 2 operations. Lead operation: List Vehicles.
+    Self-contained Naftiko capability covering one Studio Ghibli business surface.
+  tags:
+    - Studio Ghibli
+    - Anime
+    - Vehicles
+  created: '2026-05-29'
+  modified: '2026-05-29'
+binds:
+  - namespace: env
+    keys: {}
+capability:
+  consumes:
+    - type: http
+      namespace: studio-ghibli-vehicles
+      baseUri: https://ghibliapi.vercel.app
+      description: Studio Ghibli API — Vehicles business capability. Self-contained, no shared references. Public API; no authentication required.
+      resources:
+        - name: vehicles
+          path: /vehicles
+          operations:
+            - name: listVehicles
+              method: GET
+              description: List Vehicles
+              outputRawFormat: json
+              outputParameters:
+                - name: result
+                  type: object
+                  value: $.
+              inputParameters:
+                - name: fields
+                  in: query
+                  type: string
+                  description: Comma-separated list of fields to include in the response.
+                  required: false
+                - name: limit
+                  in: query
+                  type: integer
+                  description: Number of results to return (default 50; maximum 250).
+                  required: false
+        - name: vehicles-id
+          path: /vehicles/{id}
+          operations:
+            - name: getVehicle
+              method: GET
+              description: Get Vehicle By Id
+              outputRawFormat: json
+              outputParameters:
+                - name: result
+                  type: object
+                  value: $.
+              inputParameters:
+                - name: id
+                  in: path
+                  type: string
+                  description: The UUID of the vehicle.
+                  required: true
+                - name: fields
+                  in: query
+                  type: string
+                  description: Comma-separated list of fields to include in the response.
+                  required: false
+  exposes:
+    - type: rest
+      namespace: studio-ghibli-vehicles-rest
+      port: 8080
+      description: REST adapter for Studio Ghibli API — Vehicles. One Spectral-compliant resource per consumed operation, prefixed with /v1.
+      resources:
+        - path: /v1/vehicles
+          name: vehicles
+          description: REST surface for the vehicles collection.
+          operations:
+            - method: GET
+              name: listVehicles
+              description: List Vehicles
+              call: studio-ghibli-vehicles.listVehicles
+              with:
+                fields: rest.fields
+                limit: rest.limit
+              outputParameters:
+                - type: object
+                  mapping: $.
+        - path: /v1/vehicles/{id}
+          name: vehicles-id
+          description: REST surface for a single vehicle resource.
+          operations:
+            - method: GET
+              name: getVehicle
+              description: Get Vehicle By Id
+              call: studio-ghibli-vehicles.getVehicle
+              with:
+                id: rest.id
+                fields: rest.fields
+              outputParameters:
+                - type: object
+                  mapping: $.
+    - type: mcp
+      namespace: studio-ghibli-vehicles-mcp
+      port: 9090
+      transport: http
+      description: MCP adapter for Studio Ghibli API — Vehicles. One tool per consumed operation, routed inline through this capability's consumes block.
+      tools:
+        - name: list-vehicles
+          description: List Vehicles
+          hints:
+            readOnly: true
+            destructive: false
+            idempotent: true
+          call: studio-ghibli-vehicles.listVehicles
+          with:
+            fields: tools.fields
+            limit: tools.limit
+          outputParameters:
+            - type: object
+              mapping: $.
+        - name: get-vehicle
+          description: Get Vehicle By Id
+          hints:
+            readOnly: true
+            destructive: false
+            idempotent: true
+          call: studio-ghibli-vehicles.getVehicle
+          with:
+            id: tools.id
+            fields: tools.fields
+          outputParameters:
+            - type: object
+              mapping: $.

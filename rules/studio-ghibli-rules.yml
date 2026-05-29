@@ -1,0 +1,236 @@
+# Studio Ghibli API Spectral Ruleset
+#
+# Enforces conventions used by the community-built Studio Ghibli API
+# (https://github.com/janaipakos/ghibliapi). The API is a read-only REST surface
+# over five resource collections (films, people, locations, species, vehicles)
+# and uses these conventions:
+#
+#   OpenAPI version : 3.0.3 (converted from original Swagger 2.0)
+#   Title prefix    : "Studio Ghibli ..."
+#   Path casing     : lowercase, plural collection nouns
+#   OperationId     : camelCase, verb-noun (listFilms, getFilm)
+#   Parameter names : snake_case (matches response field casing)
+#   Schema props    : snake_case
+#   Security        : none — public API
+#   Required errors : 400, 404 (per Swagger source)
+extends:
+  - "spectral:oas"
+formats:
+  - oas3
+rules:
+
+  # ─── INFO / METADATA ──────────────────────────────────────────────────────
+  info-title-studio-ghibli-prefix:
+    description: API title MUST begin with "Studio Ghibli".
+    message: "{{property}} must start with 'Studio Ghibli'."
+    severity: warn
+    given: $.info.title
+    then:
+      function: pattern
+      functionOptions:
+        match: "^Studio Ghibli"
+
+  info-description-required:
+    description: API description MUST be present and non-trivial.
+    severity: warn
+    given: $.info
+    then:
+      - field: description
+        function: truthy
+      - field: description
+        function: length
+        functionOptions:
+          min: 60
+
+  info-version-required:
+    description: API version MUST be declared in info.version.
+    severity: error
+    given: $.info
+    then:
+      field: version
+      function: truthy
+
+  info-license-required:
+    description: Studio Ghibli API is MIT-licensed — info.license MUST be present.
+    severity: warn
+    given: $.info
+    then:
+      field: license
+      function: truthy
+
+  # ─── SERVERS ──────────────────────────────────────────────────────────────
+  servers-present:
+    description: At least one server URL MUST be declared.
+    severity: error
+    given: $
+    then:
+      field: servers
+      function: truthy
+
+  servers-canonical-host:
+    description: The first server URL SHOULD point to the current canonical Vercel deployment.
+    severity: info
+    given: $.servers[0].url
+    then:
+      function: pattern
+      functionOptions:
+        match: "^https://ghibliapi\\.(vercel\\.app|herokuapp\\.com)"
+
+  # ─── PATHS ────────────────────────────────────────────────────────────────
+  path-lowercase-kebab:
+    description: Path segments MUST be lowercase. The Studio Ghibli API uses single-word plural collection nouns.
+    message: "Path '{{value}}' must be lowercase."
+    severity: warn
+    given: $.paths[*]~
+    then:
+      function: pattern
+      functionOptions:
+        match: "^/[a-z0-9/_{}-]+$"
+
+  path-plural-collections:
+    description: Collection paths MUST use plural nouns (films, people, locations, species, vehicles).
+    severity: warn
+    given: $.paths[*]~
+    then:
+      function: pattern
+      functionOptions:
+        match: "^/(films|people|locations|species|vehicles)(/\\{id\\})?$"
+
+  # ─── OPERATIONS ───────────────────────────────────────────────────────────
+  operation-operationid-required:
+    description: Every operation MUST declare an operationId.
+    severity: error
+    given: $.paths[*][get,post,put,patch,delete]
+    then:
+      field: operationId
+      function: truthy
+
+  operation-operationid-camelcase:
+    description: operationId MUST be camelCase (e.g. listFilms, getFilm).
+    severity: warn
+    given: $.paths[*][get,post,put,patch,delete].operationId
+    then:
+      function: pattern
+      functionOptions:
+        match: "^[a-z][a-zA-Z0-9]*$"
+
+  operation-summary-required:
+    description: Every operation MUST have a Title Case summary.
+    severity: warn
+    given: $.paths[*][get,post,put,patch,delete]
+    then:
+      field: summary
+      function: truthy
+
+  operation-summary-title-case:
+    description: Operation summaries SHOULD use Title Case.
+    severity: info
+    given: $.paths[*][get,post,put,patch,delete].summary
+    then:
+      function: pattern
+      functionOptions:
+        match: "^[A-Z][A-Za-z0-9 ]+$"
+
+  operation-description-required:
+    description: Every operation MUST have a description.
+    severity: warn
+    given: $.paths[*][get,post,put,patch,delete]
+    then:
+      field: description
+      function: truthy
+
+  operation-tags-required:
+    description: Every operation MUST be tagged with one of the five Studio Ghibli resource groups.
+    severity: warn
+    given: $.paths[*][get,post,put,patch,delete]
+    then:
+      field: tags
+      function: truthy
+
+  operation-tags-allowed:
+    description: Operation tags MUST be one of Films, People, Locations, Species, Vehicles.
+    severity: warn
+    given: $.paths[*][get,post,put,patch,delete].tags[*]
+    then:
+      function: enumeration
+      functionOptions:
+        values:
+          - Films
+          - People
+          - Locations
+          - Species
+          - Vehicles
+
+  # ─── PARAMETERS ───────────────────────────────────────────────────────────
+  parameter-description-required:
+    description: Every parameter MUST have a description.
+    severity: warn
+    given: $..parameters[*]
+    then:
+      field: description
+      function: truthy
+
+  parameter-schema-required:
+    description: Every parameter MUST have a schema with a type.
+    severity: error
+    given: $..parameters[*]
+    then:
+      field: schema
+      function: truthy
+
+  parameter-snake-case:
+    description: Parameter names SHOULD be snake_case to match the response field casing.
+    severity: info
+    given: $..parameters[?(@.in=='query')].name
+    then:
+      function: pattern
+      functionOptions:
+        match: "^[a-z][a-z0-9_]*$"
+
+  # ─── RESPONSES ────────────────────────────────────────────────────────────
+  response-200-required:
+    description: Every GET operation MUST declare a 200 success response.
+    severity: error
+    given: $.paths[*].get.responses
+    then:
+      field: "200"
+      function: truthy
+
+  response-404-on-by-id:
+    description: Single-resource (by-id) operations MUST declare a 404 response.
+    severity: warn
+    given: $.paths[?(@property.match(/.*\{id\}$/))].get.responses
+    then:
+      field: "404"
+      function: truthy
+
+  response-content-application-json:
+    description: Success responses MUST use application/json.
+    severity: warn
+    given: $.paths[*].get.responses.200.content
+    then:
+      field: application/json
+      function: truthy
+
+  # ─── SCHEMAS ──────────────────────────────────────────────────────────────
+  schema-required-id:
+    description: All five resource schemas MUST require an id field.
+    severity: warn
+    given: $.components.schemas[Film,Person,Location,Species,Vehicle]
+    then:
+      field: required
+      function: schema
+      functionOptions:
+        schema:
+          type: array
+          contains:
+            const: id
+
+  schema-property-snake-case:
+    description: Schema property names SHOULD be snake_case (matches API responses).
+    severity: info
+    given: $.components.schemas[*].properties[*]~
+    then:
+      function: pattern
+      functionOptions:
+        match: "^[a-z][a-z0-9_]*$"

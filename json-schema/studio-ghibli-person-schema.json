@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/studio-ghibli/main/json-schema/studio-ghibli-person-schema.json",
+  "title": "Studio Ghibli Person",
+  "description": "A character that appears in one or more Studio Ghibli films.",
+  "type": "object",
+  "required": ["id", "name"],
+  "properties": {
+    "id": { "type": "string", "format": "uuid", "description": "Unique identifier representing a specific person.", "example": "267649ac-fb1b-11eb-9a03-0242ac130003" },
+    "name": { "type": "string", "description": "Name of the character.", "example": "Haku" },
+    "gender": { "type": "string", "description": "Gender as portrayed in the film(s).", "example": "Male" },
+    "age": { "type": "string", "description": "Age — may be a number, a range, or descriptive.", "example": "12" },
+    "eye_color": { "type": "string", "description": "Eye colour.", "example": "Green" },
+    "hair_color": { "type": "string", "description": "Hair colour.", "example": "Green" },
+    "films": { "type": "array", "items": { "type": "string", "format": "uri" }, "description": "Films in which this character appears." },
+    "species": { "type": "string", "format": "uri", "description": "Species of the character (URL reference)." },
+    "url": { "type": "string", "format": "uri", "description": "Canonical URL of the person resource." }
+  }
+}

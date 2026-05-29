@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/studio-ghibli/main/json-schema/studio-ghibli-film-schema.json",
+  "title": "Studio Ghibli Film",
+  "description": "A Studio Ghibli theatrical film catalogued by the community-built Studio Ghibli API.",
+  "type": "object",
+  "required": ["id", "title", "description", "director", "producer", "release_date"],
+  "properties": {
+    "id": { "type": "string", "format": "uuid", "description": "Unique identifier representing a specific film.", "example": "2baf70d1-42bb-4437-b551-e5fed5a87abe" },
+    "title": { "type": "string", "description": "Title of the film in English.", "example": "Castle in the Sky" },
+    "original_title": { "type": "string", "description": "Original Japanese title (Japanese characters).", "example": "天空の城ラピュタ" },
+    "original_title_romanised": { "type": "string", "description": "Original Japanese title romanised.", "example": "Tenkū no shiro Rapyuta" },
+    "image": { "type": "string", "format": "uri", "description": "URL of the film poster image." },
+    "movie_banner": { "type": "string", "format": "uri", "description": "URL of the film banner image." },
+    "description": { "type": "string", "description": "Plot summary or synopsis of the film." },
+    "director": { "type": "string", "description": "Director of the film.", "example": "Hayao Miyazaki" },
+    "producer": { "type": "string", "description": "Producer of the film.", "example": "Isao Takahata" },
+    "release_date": { "type": "string", "description": "Original theatrical release year (YYYY).", "example": "1986" },
+    "running_time": { "type": "string", "description": "Running time of the film in minutes.", "example": "124" },
+    "rt_score": { "type": "string", "description": "Rotten Tomatoes critical score.", "example": "95" },
+    "people": { "type": "array", "items": { "type": "string", "format": "uri" }, "description": "People that appear in the film (URL references)." },
+    "species": { "type": "array", "items": { "type": "string", "format": "uri" }, "description": "Species that appear in the film (URL references)." },
+    "locations": { "type": "array", "items": { "type": "string", "format": "uri" }, "description": "Locations that appear in the film (URL references)." },
+    "vehicles": { "type": "array", "items": { "type": "string", "format": "uri" }, "description": "Vehicles that appear in the film (URL references)." },
+    "url": { "type": "string", "format": "uri", "description": "Canonical URL of the film resource." }
+  }
+}

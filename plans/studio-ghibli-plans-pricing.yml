@@ -1,0 +1,55 @@
+specification: API Commons Plans
+specificationVersion: '0.1'
+schema: https://raw.githubusercontent.com/api-evangelist/interface-research/main/schema/api-commons.yml#/$defs/Plans
+provider: Studio Ghibli API
+providerId: studio-ghibli
+created: '2026-05-29'
+modified: '2026-05-29'
+reconciled: true
+tags:
+  - Free
+  - Public API
+  - Open Source
+  - Anime
+  - Read-Only
+description: >-
+  The Studio Ghibli API (https://github.com/janaipakos/ghibliapi) is a free,
+  unofficial, fan-made, MIT-licensed open-source REST API. There is no
+  authentication, no metering, no paid tier, and no commercial offering. Self-hosting
+  the project is also free of charge — the canonical instance moved from Heroku
+  (free tier ended 2022-11-28) to Vercel and is operated as a community resource.
+  Users who want guaranteed availability are encouraged to fork the repo and host
+  their own copy.
+sources:
+  - https://github.com/janaipakos/ghibliapi
+  - https://ghibliapi.vercel.app
+  - https://github.com/janaipakos/ghibliapi/blob/master/LICENSE
+plans:
+  - id: studio-ghibli-free
+    name: Free / Public
+    type: freemium
+    description: Free, anonymous access to all five resource collections. No registration, no API key, no quotas, no paid upgrade path.
+    entries:
+      - label: API requests
+        name: api_requests
+        type: flat
+        metric: request
+        limit: -1
+        timeFrame: usage
+        geo: global
+        unit: 1
+        price: '0'
+        userMultiplied: false
+    elements:
+      - name: List Films
+      - name: Get Film By Id
+      - name: List People
+      - name: Get Person By Id
+      - name: List Locations
+      - name: Get Location By Id
+      - name: List Species
+      - name: Get Species By Id
+      - name: List Vehicles
+      - name: Get Vehicle By Id
+      - name: No authentication required
+      - name: MIT-licensed source available for self-hosting

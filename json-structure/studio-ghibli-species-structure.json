@@ -1,0 +1,17 @@
+{
+  "name": "Species",
+  "structure": {
+    "type": "object",
+    "required": ["id", "name"],
+    "properties": {
+      "id": { "type": "string", "description": "Unique identifier representing a specific species." },
+      "name": { "type": "string", "description": "Common name of the species." },
+      "classification": { "type": "string", "description": "Biological classification (e.g. Mammal, Spirit, Cat)." },
+      "eye_colors": { "type": "string", "description": "Comma-separated list of eye colours observed within the species." },
+      "hair_colors": { "type": "string", "description": "Comma-separated list of hair colours observed within the species." },
+      "people": { "type": "array", "items": { "type": "string" } },
+      "films": { "type": "array", "items": { "type": "string" } },
+      "url": { "type": "string", "description": "Canonical URL of the species resource." }
+    }
+  }
+}

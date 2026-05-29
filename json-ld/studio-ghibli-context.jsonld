@@ -1,0 +1,48 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "@vocab": "https://schema.org/",
+    "ghibli": "https://ghibliapi.vercel.app/schema#",
+    "schema": "https://schema.org/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+
+    "id":                       {"@id": "schema:identifier"},
+    "url":                      {"@id": "schema:url",         "@type": "@id"},
+    "name":                     {"@id": "schema:name"},
+    "title":                    {"@id": "schema:name"},
+    "original_title":           {"@id": "ghibli:originalTitle"},
+    "original_title_romanised": {"@id": "ghibli:originalTitleRomanised"},
+    "description":              {"@id": "schema:description"},
+    "image":                    {"@id": "schema:image",       "@type": "@id"},
+    "movie_banner":             {"@id": "ghibli:movieBanner", "@type": "@id"},
+
+    "director":                 {"@id": "schema:director"},
+    "producer":                 {"@id": "schema:producer"},
+    "release_date":             {"@id": "schema:datePublished"},
+    "running_time":             {"@id": "schema:duration"},
+    "rt_score":                 {"@id": "schema:aggregateRating"},
+
+    "gender":                   {"@id": "schema:gender"},
+    "age":                      {"@id": "ghibli:age"},
+    "eye_color":                {"@id": "ghibli:eyeColor"},
+    "hair_color":               {"@id": "ghibli:hairColor"},
+    "eye_colors":               {"@id": "ghibli:eyeColors"},
+    "hair_colors":              {"@id": "ghibli:hairColors"},
+
+    "climate":                  {"@id": "ghibli:climate"},
+    "terrain":                  {"@id": "ghibli:terrain"},
+    "surface_water":            {"@id": "ghibli:surfaceWater"},
+
+    "classification":           {"@id": "ghibli:classification"},
+    "vehicle_class":            {"@id": "ghibli:vehicleClass"},
+    "length":                   {"@id": "ghibli:length"},
+
+    "people":     {"@id": "ghibli:people",    "@type": "@id", "@container": "@set"},
+    "species":    {"@id": "ghibli:species",   "@type": "@id"},
+    "locations":  {"@id": "ghibli:locations", "@type": "@id", "@container": "@set"},
+    "vehicles":   {"@id": "ghibli:vehicles",  "@type": "@id", "@container": "@set"},
+    "films":      {"@id": "ghibli:films",     "@type": "@id", "@container": "@set"},
+    "residents":  {"@id": "ghibli:residents", "@type": "@id", "@container": "@set"},
+    "pilot":      {"@id": "ghibli:pilot",     "@type": "@id"}
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "name": "Person",
+  "structure": {
+    "type": "object",
+    "required": ["id", "name"],
+    "properties": {
+      "id": { "type": "string", "description": "Unique identifier representing a specific person." },
+      "name": { "type": "string", "description": "Name of the character." },
+      "gender": { "type": "string", "description": "Gender as portrayed in the film(s)." },
+      "age": { "type": "string", "description": "Age — may be numeric, a range, or descriptive." },
+      "eye_color": { "type": "string", "description": "Eye colour." },
+      "hair_color": { "type": "string", "description": "Hair colour." },
+      "films": { "type": "array", "items": { "type": "string" } },
+      "species": { "type": "string", "description": "URL reference to the character's species." },
+      "url": { "type": "string", "description": "Canonical URL of the person resource." }
+    }
+  }
+}

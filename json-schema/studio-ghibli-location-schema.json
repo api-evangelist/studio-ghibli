@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/studio-ghibli/main/json-schema/studio-ghibli-location-schema.json",
+  "title": "Studio Ghibli Location",
+  "description": "A setting or place that appears in Studio Ghibli films.",
+  "type": "object",
+  "required": ["id", "name"],
+  "properties": {
+    "id": { "type": "string", "format": "uuid", "description": "Unique identifier representing a specific location.", "example": "11014596-71b0-4b3e-b8c0-1c4b15f28b9a" },
+    "name": { "type": "string", "description": "Name of the location.", "example": "Irontown" },
+    "climate": { "type": "string", "description": "Predominant climate of the location.", "example": "Continental" },
+    "terrain": { "type": "string", "description": "Predominant terrain of the location.", "example": "Mountain" },
+    "surface_water": { "type": "string", "description": "Approximate percentage of the location covered by surface water.", "example": "40" },
+    "residents": { "type": "array", "items": { "type": "string", "format": "uri" }, "description": "People who reside at this location." },
+    "films": { "type": "array", "items": { "type": "string", "format": "uri" }, "description": "Films in which this location appears." },
+    "url": { "type": "string", "format": "uri", "description": "Canonical URL of the location resource." }
+  }
+}

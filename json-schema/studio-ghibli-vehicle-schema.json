@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/studio-ghibli/main/json-schema/studio-ghibli-vehicle-schema.json",
+  "title": "Studio Ghibli Vehicle",
+  "description": "A vehicle that appears in one or more Studio Ghibli films.",
+  "type": "object",
+  "required": ["id", "name"],
+  "properties": {
+    "id": { "type": "string", "format": "uuid", "description": "Unique identifier representing a specific vehicle.", "example": "4e09b023-f650-4747-9ab9-eacf14540cfb" },
+    "name": { "type": "string", "description": "Name of the vehicle.", "example": "Air Destroyer Goliath" },
+    "description": { "type": "string", "description": "Short description of the vehicle and its role." },
+    "vehicle_class": { "type": "string", "description": "Class of the vehicle (e.g. Airship, Aircraft, Submarine).", "example": "Airship" },
+    "length": { "type": "string", "description": "Length of the vehicle (string — may include thousands separators).", "example": "1,000" },
+    "pilot": { "type": "string", "format": "uri", "description": "URL reference to the person who pilots the vehicle." },
+    "films": { "type": "array", "items": { "type": "string", "format": "uri" }, "description": "Films in which the vehicle appears." },
+    "url": { "type": "string", "format": "uri", "description": "Canonical URL of the vehicle resource." }
+  }
+}

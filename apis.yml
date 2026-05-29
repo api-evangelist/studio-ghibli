@@ -1,32 +1,218 @@
 aid: studio-ghibli
 name: Studio Ghibli
-description: "Resources from Studio Ghibli films"
-url: https://ghibliapi.herokuapp.com
+description: >-
+  Studio Ghibli API — a community-built, unofficial, fan-made, MIT-licensed
+  REST API that catalogs the people, places, and things found in the worlds of
+  Studio Ghibli. Five resource collections (films, people, locations, species,
+  vehicles) cross-link via canonical URLs. No authentication, no metering, no
+  paid tier. Source: github.com/janaipakos/ghibliapi (archived 2022-12-02);
+  canonical instance now at ghibliapi.vercel.app.
+url: https://ghibliapi.vercel.app
 specificationVersion: '0.20'
 created: '2026-05-28'
-modified: '2026-05-28'
+modified: '2026-05-29'
 x-source: public-apis/public-apis
-x-category: "Anime"
+x-type: opensource
+x-category: Anime
 x-tier: 3
 x-tier-reason: bulk-registered-from-public-apis
 tags:
   - Anime
+  - Studio Ghibli
+  - Films
+  - Characters
+  - Locations
+  - Species
+  - Vehicles
   - Public APIs
+  - Open Source
+  - Read-Only
 apis:
-  - name: Studio Ghibli
-    description: "Resources from Studio Ghibli films"
-    humanURL: https://ghibliapi.herokuapp.com
-    baseURL: https://ghibliapi.herokuapp.com
+  - name: Studio Ghibli API
+    description: >-
+      Read-only REST API exposing five resource collections (films, people,
+      locations, species, vehicles) that catalog the worlds of Studio Ghibli.
+      No authentication; default page size 50, max 250; optional `fields=`
+      projection.
+    humanURL: https://ghibliapi.vercel.app
+    baseURL: https://ghibliapi.vercel.app
     tags:
       - Anime
+      - Studio Ghibli
+      - Films
+      - Characters
+      - Locations
+      - Species
+      - Vehicles
     properties:
       - type: Documentation
-        url: https://ghibliapi.herokuapp.com
+        url: https://ghibliapi.vercel.app
+      - type: OpenAPI
+        url: openapi/studio-ghibli-openapi.yml
+      - type: JSONSchema
+        url: json-schema/studio-ghibli-film-schema.json
+        title: Film Schema
+      - type: JSONSchema
+        url: json-schema/studio-ghibli-person-schema.json
+        title: Person Schema
+      - type: JSONSchema
+        url: json-schema/studio-ghibli-location-schema.json
+        title: Location Schema
+      - type: JSONSchema
+        url: json-schema/studio-ghibli-species-schema.json
+        title: Species Schema
+      - type: JSONSchema
+        url: json-schema/studio-ghibli-vehicle-schema.json
+        title: Vehicle Schema
+      - type: JSONStructure
+        url: json-structure/studio-ghibli-film-structure.json
+        title: Film Structure
+      - type: JSONStructure
+        url: json-structure/studio-ghibli-person-structure.json
+        title: Person Structure
+      - type: JSONStructure
+        url: json-structure/studio-ghibli-location-structure.json
+        title: Location Structure
+      - type: JSONStructure
+        url: json-structure/studio-ghibli-species-structure.json
+        title: Species Structure
+      - type: JSONStructure
+        url: json-structure/studio-ghibli-vehicle-structure.json
+        title: Vehicle Structure
+      - type: Example
+        url: examples/studio-ghibli-listfilms-example.json
+        title: List Films Example
+      - type: Example
+        url: examples/studio-ghibli-getfilm-example.json
+        title: Get Film Example
+      - type: Example
+        url: examples/studio-ghibli-listpeople-example.json
+        title: List People Example
+      - type: Example
+        url: examples/studio-ghibli-getperson-example.json
+        title: Get Person Example
+      - type: Example
+        url: examples/studio-ghibli-listlocations-example.json
+        title: List Locations Example
+      - type: Example
+        url: examples/studio-ghibli-getlocation-example.json
+        title: Get Location Example
+      - type: Example
+        url: examples/studio-ghibli-listspecies-example.json
+        title: List Species Example
+      - type: Example
+        url: examples/studio-ghibli-getspecies-example.json
+        title: Get Species Example
+      - type: Example
+        url: examples/studio-ghibli-listvehicles-example.json
+        title: List Vehicles Example
+      - type: Example
+        url: examples/studio-ghibli-getvehicle-example.json
+        title: Get Vehicle Example
+      - type: NaftikoCapability
+        url: capabilities/studio-ghibli-films.yaml
+        title: Films Capability
+      - type: NaftikoCapability
+        url: capabilities/studio-ghibli-people.yaml
+        title: People Capability
+      - type: NaftikoCapability
+        url: capabilities/studio-ghibli-locations.yaml
+        title: Locations Capability
+      - type: NaftikoCapability
+        url: capabilities/studio-ghibli-species.yaml
+        title: Species Capability
+      - type: NaftikoCapability
+        url: capabilities/studio-ghibli-vehicles.yaml
+        title: Vehicles Capability
+      - type: Plans
+        url: plans/studio-ghibli-plans-pricing.yml
+      - type: RateLimits
+        url: rate-limits/studio-ghibli-rate-limits.yml
+      - type: Authentication
+        url: https://github.com/janaipakos/ghibliapi#getting-started
+        title: No Authentication
 common:
   - type: Website
-    url: https://ghibliapi.herokuapp.com
+    url: https://ghibliapi.vercel.app
+  - type: GitHubRepository
+    url: https://github.com/janaipakos/ghibliapi
+  - type: License
+    url: https://github.com/janaipakos/ghibliapi/blob/master/LICENSE
+    title: MIT
   - type: PublicAPIsListing
     url: https://github.com/public-apis/public-apis
+  - type: JSON-LD
+    url: json-ld/studio-ghibli-context.jsonld
+  - type: SpectralRules
+    url: rules/studio-ghibli-rules.yml
+  - type: Vocabulary
+    url: vocabulary/studio-ghibli-vocabulary.yml
+  - type: SDK
+    url: https://github.com/sotojuan/ghibli
+    title: Elixir SDK (ghibli)
+  - type: SDK
+    url: https://github.com/Rchristiani/totoro
+    title: Go SDK (totoro)
+  - type: SDK
+    url: https://github.com/kisscool-fr/ghibliql
+    title: GraphQL Wrapper (ghibliQL)
+  - type: SDK
+    url: https://github.com/onertipaday/ghibliapi
+    title: R Client
+  - type: SDK
+    url: https://github.com/Incognito/python_studio_ghibli_api_sdk
+    title: Python SDK
+  - type: CodeExamples
+    url: https://github.com/kxvn-lx/Ghibliii
+    title: Swift (iOS) Example
+  - type: CodeExamples
+    url: https://github.com/txemasv/ghibli-films
+    title: Android Example
+  - type: CodeExamples
+    url: https://github.com/janaipakos/ghibliapi-example
+    title: Haskell Example
+  - type: CodeExamples
+    url: https://github.com/mazipan/ghibli-fans
+    title: JavaScript Example (ghibli-fans)
+  - type: CodeExamples
+    url: https://github.com/taniarascia/sandbox/tree/master/ghibli
+    title: JavaScript Example (sandbox)
+  - type: Features
+    data:
+      - name: Five Resource Collections
+        description: Films, people, locations, species, and vehicles — each addressable as a paginated collection and as a single resource by UUID.
+      - name: Graph Traversal Via URLs
+        description: Resources cross-link to related resources using canonical URLs, so consumers can walk the graph without join logic.
+      - name: Field Projection
+        description: Optional `fields=` query parameter returns only the named fields, reducing payload size.
+      - name: Pagination
+        description: Optional `limit=` query parameter (default 50, max 250) bounds list responses.
+      - name: No Authentication
+        description: Fully anonymous public API; no API key, no OAuth, no token.
+      - name: MIT-Licensed Source
+        description: The backing JSON Server implementation is open source and can be forked and self-hosted.
+  - type: UseCases
+    data:
+      - name: Tutorial / Workshop Target
+        description: A safe, stable, no-auth API frequently used in front-end tutorials, REST workshops, and language-SDK demonstrations.
+      - name: Fan Sites and Discovery Apps
+        description: Builders of Studio Ghibli fan sites can hydrate film/character/location detail pages directly from the API.
+      - name: GraphQL Wrapping Demos
+        description: Used by projects like ghibliQL to demonstrate wrapping a REST API in a GraphQL layer.
+      - name: LLM / Agent Tooling Examples
+        description: A self-contained, read-only domain that makes a good fixture for MCP server demos, tool-use examples, and agent walkthroughs.
+  - type: Integrations
+    data:
+      - name: JSON Server
+        description: The API is implemented on top of typicode/json-server (https://github.com/typicode/json-server).
+      - name: ReDoc
+        description: The documentation site is rendered with Redocly's ReDoc (https://github.com/Rebilly/ReDoc).
+      - name: TMDB Image CDN
+        description: Film poster and banner images are served from image.tmdb.org.
+  - type: Solutions
+    data:
+      - name: Self-Hosted Fork
+        description: Fork janaipakos/ghibliapi and deploy to Vercel, Render, Fly.io, or any Node host for guaranteed availability.
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com

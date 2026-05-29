@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/studio-ghibli/main/json-schema/studio-ghibli-species-schema.json",
+  "title": "Studio Ghibli Species",
+  "description": "A species classification of a character or creature in the Studio Ghibli films.",
+  "type": "object",
+  "required": ["id", "name"],
+  "properties": {
+    "id": { "type": "string", "format": "uuid", "description": "Unique identifier representing a specific species.", "example": "af3910a6-429f-4c74-9ad5-dfe1c4aa04f2" },
+    "name": { "type": "string", "description": "Common name of the species.", "example": "Human" },
+    "classification": { "type": "string", "description": "Biological classification (e.g. Mammal, Spirit, Cat).", "example": "Mammal" },
+    "eye_colors": { "type": "string", "description": "Comma-separated list of eye colours observed within the species.", "example": "Black, Blue, Brown, Grey, Green, Hazel" },
+    "hair_colors": { "type": "string", "description": "Comma-separated list of hair colours observed within the species.", "example": "Black, Blonde, Brown, Grey, White" },
+    "people": { "type": "array", "items": { "type": "string", "format": "uri" }, "description": "Characters that belong to this species." },
+    "films": { "type": "array", "items": { "type": "string", "format": "uri" }, "description": "Films in which this species appears." },
+    "url": { "type": "string", "format": "uri", "description": "Canonical URL of the species resource." }
+  }
+}

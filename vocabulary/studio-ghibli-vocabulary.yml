@@ -1,0 +1,112 @@
+# Studio Ghibli Vocabulary
+#
+# Controlled vocabulary for the community-built Studio Ghibli API
+# (https://github.com/janaipakos/ghibliapi, MIT, archived 2022-12-02; running at
+# https://ghibliapi.vercel.app). Aligns the API's five resource collections —
+# films, people, locations, species, vehicles — with the json-ld/ context in
+# this repo and with the api-evangelist signals taxonomy.
+vocabulary: studio-ghibli
+version: "1.0.0"
+modified: "2026-05-29"
+
+# Top-level subject areas (used to tag the API, capabilities, and signals)
+domains:
+  - name: Film Catalog
+    description: Read-only catalog of Studio Ghibli theatrical films with director, producer, release-year, runtime, and critical-reception metadata.
+  - name: Characters
+    description: People and characters that appear in Studio Ghibli films, with demographic attributes and back-references to the films they appear in.
+  - name: World Building
+    description: Locations and settings that appear in Studio Ghibli films, with climate, terrain, and resident references.
+  - name: Bestiary
+    description: Species classifications — both human and non-human — that appear across Studio Ghibli films.
+  - name: Vehicles
+    description: Vehicles featured in Studio Ghibli films, with class, length, and pilot references.
+
+# Core entities exposed by the API
+entities:
+  Film:
+    description: A Studio Ghibli theatrical film.
+    properties: [id, title, original_title, original_title_romanised, image, movie_banner, description, director, producer, release_date, running_time, rt_score, people, species, locations, vehicles, url]
+  Person:
+    description: A character that appears in one or more Studio Ghibli films.
+    properties: [id, name, gender, age, eye_color, hair_color, films, species, url]
+  Location:
+    description: A setting or place that appears in Studio Ghibli films.
+    properties: [id, name, climate, terrain, surface_water, residents, films, url]
+  Species:
+    description: A species classification of a character or creature in the Studio Ghibli films.
+    properties: [id, name, classification, eye_colors, hair_colors, people, films, url]
+  Vehicle:
+    description: A vehicle that appears in one or more Studio Ghibli films.
+    properties: [id, name, description, vehicle_class, length, pilot, films, url]
+
+# Relations between entities (graph traversal — every collection cross-links via URL)
+relations:
+  - from: Film
+    name: features
+    to: [Person, Species, Location, Vehicle]
+    description: A Film references the People, Species, Locations, and Vehicles that appear in it via URL arrays.
+  - from: Person
+    name: appearsIn
+    to: Film
+    description: A Person references the Films they appear in.
+  - from: Person
+    name: belongsTo
+    to: Species
+    description: A Person references their Species.
+  - from: Location
+    name: hostsResident
+    to: Person
+    description: A Location references the People who reside there.
+  - from: Location
+    name: appearsIn
+    to: Film
+    description: A Location references the Films in which it appears.
+  - from: Species
+    name: includesMember
+    to: Person
+    description: A Species references the People who belong to it.
+  - from: Species
+    name: appearsIn
+    to: Film
+    description: A Species references the Films in which it appears.
+  - from: Vehicle
+    name: appearsIn
+    to: Film
+    description: A Vehicle references the Films in which it appears.
+  - from: Vehicle
+    name: pilotedBy
+    to: Person
+    description: A Vehicle references the Person who pilots it.
+
+# Conventional verbs (CRUD surface — this API is read-only)
+operations:
+  - name: list
+    description: Return a paginated array of a collection (default 50, max 250).
+  - name: get
+    description: Return a single resource identified by its UUID.
+
+# Query conventions
+queryParameters:
+  - name: fields
+    type: string
+    description: Comma-separated list of fields to project from the resource.
+  - name: limit
+    type: integer
+    default: 50
+    max: 250
+    description: Maximum number of resources to return from a list endpoint.
+
+# Tags used across artifacts in this repo
+tags:
+  - Anime
+  - Studio Ghibli
+  - Films
+  - Characters
+  - Locations
+  - Species
+  - Vehicles
+  - Catalog
+  - Read-Only
+  - Public APIs
+  - Open Source

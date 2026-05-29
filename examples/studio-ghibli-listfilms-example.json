@@ -1,0 +1,22 @@
+{
+  "operationId": "listFilms",
+  "method": "GET",
+  "path": "/films",
+  "request": {
+    "query": { "limit": 2, "fields": "id,title,director,release_date" }
+  },
+  "response": [
+    {
+      "id": "2baf70d1-42bb-4437-b551-e5fed5a87abe",
+      "title": "Castle in the Sky",
+      "director": "Hayao Miyazaki",
+      "release_date": "1986"
+    },
+    {
+      "id": "12cfb892-aac0-4c5b-94af-521852e46d6a",
+      "title": "Grave of the Fireflies",
+      "director": "Isao Takahata",
+      "release_date": "1988"
+    }
+  ]
+}

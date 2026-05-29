@@ -1,0 +1,626 @@
+openapi: 3.0.3
+info:
+  title: Studio Ghibli API
+  description: |
+    The Studio Ghibli API catalogs the people, places, and things found in the worlds of Studio Ghibli. It is an unofficial, fan-made, community-built REST API that exposes five resource collections: films, people, locations, species, and vehicles. Resources are returned as JSON and cross-link to each other through their canonical URLs, so consumers can traverse the graph (e.g. fetch a film, then its people, then their species) without authentication.
+
+    The original API was hosted at `ghibliapi.herokuapp.com`; after Heroku's free tier ended in November 2022 the canonical instance was archived and moved to `ghibliapi.vercel.app`. Source: https://github.com/janaipakos/ghibliapi (MIT, archived 2022-12-02).
+  version: 1.0.1
+  license:
+    name: MIT
+    url: https://github.com/janaipakos/ghibliapi/blob/master/LICENSE
+  contact:
+    name: Studio Ghibli API (community-maintained)
+    url: https://github.com/janaipakos/ghibliapi
+  x-generated-from: documentation
+  x-source-spec: https://raw.githubusercontent.com/janaipakos/ghibliapi/master/public/swagger.yaml
+  x-last-validated: '2026-05-29'
+servers:
+  - url: https://ghibliapi.vercel.app
+    description: Current canonical instance (Vercel)
+  - url: https://ghibliapi.herokuapp.com
+    description: Legacy instance (Heroku free tier ended 2022-11-28; may be unavailable)
+tags:
+  - name: Films
+    description: Studio Ghibli theatrical films.
+  - name: People
+    description: Characters that appear in Studio Ghibli films.
+  - name: Locations
+    description: Settings and places that appear in Studio Ghibli films.
+  - name: Species
+    description: Species classifications of characters appearing in Studio Ghibli films.
+  - name: Vehicles
+    description: Vehicles featured in Studio Ghibli films.
+paths:
+  /films:
+    get:
+      operationId: listFilms
+      summary: List Films
+      description: Return all Studio Ghibli films catalogued by the API.
+      tags:
+        - Films
+      parameters:
+        - $ref: '#/components/parameters/Fields'
+        - $ref: '#/components/parameters/Limit'
+      responses:
+        '200':
+          description: An array of films.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Film'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '404':
+          $ref: '#/components/responses/NotFound'
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+  /films/{id}:
+    get:
+      operationId: getFilm
+      summary: Get Film By Id
+      description: Return a single film identified by its UUID.
+      tags:
+        - Films
+      parameters:
+        - $ref: '#/components/parameters/FilmId'
+        - $ref: '#/components/parameters/Fields'
+      responses:
+        '200':
+          description: A single film resource.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Film'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '404':
+          $ref: '#/components/responses/NotFound'
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+  /people:
+    get:
+      operationId: listPeople
+      summary: List People
+      description: Return all the people from across the Studio Ghibli universe.
+      tags:
+        - People
+      parameters:
+        - $ref: '#/components/parameters/Fields'
+        - $ref: '#/components/parameters/Limit'
+      responses:
+        '200':
+          description: An array of people.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Person'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '404':
+          $ref: '#/components/responses/NotFound'
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+  /people/{id}:
+    get:
+      operationId: getPerson
+      summary: Get Person By Id
+      description: Return a single character identified by its UUID.
+      tags:
+        - People
+      parameters:
+        - $ref: '#/components/parameters/PersonId'
+        - $ref: '#/components/parameters/Fields'
+      responses:
+        '200':
+          description: A single person resource.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Person'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '404':
+          $ref: '#/components/responses/NotFound'
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+  /locations:
+    get:
+      operationId: listLocations
+      summary: List Locations
+      description: Return all the locations that have appeared in the Studio Ghibli films.
+      tags:
+        - Locations
+      parameters:
+        - $ref: '#/components/parameters/Fields'
+        - $ref: '#/components/parameters/Limit'
+      responses:
+        '200':
+          description: An array of locations.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Location'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '404':
+          $ref: '#/components/responses/NotFound'
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+  /locations/{id}:
+    get:
+      operationId: getLocation
+      summary: Get Location By Id
+      description: Return a single location identified by its UUID.
+      tags:
+        - Locations
+      parameters:
+        - $ref: '#/components/parameters/LocationId'
+        - $ref: '#/components/parameters/Fields'
+      responses:
+        '200':
+          description: A single location resource.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Location'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '404':
+          $ref: '#/components/responses/NotFound'
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+  /species:
+    get:
+      operationId: listSpecies
+      summary: List Species
+      description: Return all the species (human and non-human) that appear in the Studio Ghibli films.
+      tags:
+        - Species
+      parameters:
+        - $ref: '#/components/parameters/Fields'
+        - $ref: '#/components/parameters/Limit'
+      responses:
+        '200':
+          description: An array of species.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Species'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '404':
+          $ref: '#/components/responses/NotFound'
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+  /species/{id}:
+    get:
+      operationId: getSpecies
+      summary: Get Species By Id
+      description: Return a single species identified by its UUID.
+      tags:
+        - Species
+      parameters:
+        - $ref: '#/components/parameters/SpeciesId'
+        - $ref: '#/components/parameters/Fields'
+      responses:
+        '200':
+          description: A single species resource.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Species'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '404':
+          $ref: '#/components/responses/NotFound'
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+  /vehicles:
+    get:
+      operationId: listVehicles
+      summary: List Vehicles
+      description: Return all the vehicles that have been used in the Studio Ghibli films.
+      tags:
+        - Vehicles
+      parameters:
+        - $ref: '#/components/parameters/Fields'
+        - $ref: '#/components/parameters/Limit'
+      responses:
+        '200':
+          description: An array of vehicles.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Vehicle'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '404':
+          $ref: '#/components/responses/NotFound'
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+  /vehicles/{id}:
+    get:
+      operationId: getVehicle
+      summary: Get Vehicle By Id
+      description: Return a single vehicle identified by its UUID.
+      tags:
+        - Vehicles
+      parameters:
+        - $ref: '#/components/parameters/VehicleId'
+        - $ref: '#/components/parameters/Fields'
+      responses:
+        '200':
+          description: A single vehicle resource.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Vehicle'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '404':
+          $ref: '#/components/responses/NotFound'
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+components:
+  parameters:
+    Fields:
+      name: fields
+      in: query
+      description: Comma-separated list of fields to include in the response. When omitted, all fields are returned.
+      required: false
+      schema:
+        type: string
+      example: title,director,release_date
+    Limit:
+      name: limit
+      in: query
+      description: Number of results to return. Default is 50; maximum is 250.
+      required: false
+      schema:
+        type: integer
+        format: int32
+        default: 50
+        minimum: 1
+        maximum: 250
+      example: 50
+    FilmId:
+      name: id
+      in: path
+      description: The UUID of the film.
+      required: true
+      schema:
+        type: string
+        format: uuid
+      example: 58611129-2dbc-4a81-a72f-77ddfc1b1b49
+    PersonId:
+      name: id
+      in: path
+      description: The UUID of the person.
+      required: true
+      schema:
+        type: string
+        format: uuid
+      example: 267649ac-fb1b-11eb-9a03-0242ac130003
+    LocationId:
+      name: id
+      in: path
+      description: The UUID of the location.
+      required: true
+      schema:
+        type: string
+        format: uuid
+      example: 11014596-71b0-4b3e-b8c0-1c4b15f28b9a
+    SpeciesId:
+      name: id
+      in: path
+      description: The UUID of the species.
+      required: true
+      schema:
+        type: string
+        format: uuid
+      example: af3910a6-429f-4c74-9ad5-dfe1c4aa04f2
+    VehicleId:
+      name: id
+      in: path
+      description: The UUID of the vehicle.
+      required: true
+      schema:
+        type: string
+        format: uuid
+      example: 4e09b023-f650-4747-9ab9-eacf14540cfb
+  responses:
+    BadRequest:
+      description: Bad request — the query parameters or path identifier could not be parsed.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+    NotFound:
+      description: Not found — no resource matches the supplied identifier.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+  schemas:
+    Film:
+      type: object
+      description: A Studio Ghibli theatrical film.
+      required: [id, title, description, director, producer, release_date]
+      properties:
+        id:
+          type: string
+          format: uuid
+          description: Unique identifier representing a specific film.
+          example: 2baf70d1-42bb-4437-b551-e5fed5a87abe
+        title:
+          type: string
+          description: Title of the film in English.
+          example: Castle in the Sky
+        original_title:
+          type: string
+          description: Original Japanese title of the film (in Japanese characters).
+          example: 天空の城ラピュタ
+        original_title_romanised:
+          type: string
+          description: Original Japanese title romanised in Latin characters.
+          example: Tenkū no shiro Rapyuta
+        image:
+          type: string
+          format: uri
+          description: URL of the film poster image.
+        movie_banner:
+          type: string
+          format: uri
+          description: URL of the film banner image.
+        description:
+          type: string
+          description: Plot summary or synopsis of the film.
+        director:
+          type: string
+          description: Director of the film.
+          example: Hayao Miyazaki
+        producer:
+          type: string
+          description: Producer of the film.
+          example: Isao Takahata
+        release_date:
+          type: string
+          description: Original theatrical release year (YYYY).
+          example: '1986'
+        running_time:
+          type: string
+          description: Running time of the film in minutes.
+          example: '124'
+        rt_score:
+          type: string
+          description: Rotten Tomatoes critical score.
+          example: '95'
+        people:
+          type: array
+          description: People that appear in or are associated with the film.
+          items:
+            type: string
+            format: uri
+        species:
+          type: array
+          description: Species that appear in or are associated with the film.
+          items:
+            type: string
+            format: uri
+        locations:
+          type: array
+          description: Locations that appear in or are associated with the film.
+          items:
+            type: string
+            format: uri
+        vehicles:
+          type: array
+          description: Vehicles that appear in or are associated with the film.
+          items:
+            type: string
+            format: uri
+        url:
+          type: string
+          format: uri
+          description: Canonical URL of the film resource.
+    Person:
+      type: object
+      description: A character that appears in one or more Studio Ghibli films.
+      required: [id, name]
+      properties:
+        id:
+          type: string
+          format: uuid
+          description: Unique identifier representing a specific person.
+          example: 267649ac-fb1b-11eb-9a03-0242ac130003
+        name:
+          type: string
+          description: Name of the character.
+          example: Haku
+        gender:
+          type: string
+          description: The character's gender as portrayed in the film(s).
+          example: Male
+        age:
+          type: string
+          description: The character's age. May be a number, a range, or descriptive (e.g. "unknown").
+          example: '12'
+        eye_color:
+          type: string
+          description: The character's eye colour.
+          example: Green
+        hair_color:
+          type: string
+          description: The character's hair colour.
+          example: Green
+        films:
+          type: array
+          description: Films in which this character appears.
+          items:
+            type: string
+            format: uri
+        species:
+          type: string
+          format: uri
+          description: Species of the character (URL reference).
+        url:
+          type: string
+          format: uri
+          description: Canonical URL of the person resource.
+    Location:
+      type: object
+      description: A setting or place that appears in Studio Ghibli films.
+      required: [id, name]
+      properties:
+        id:
+          type: string
+          format: uuid
+          description: Unique identifier representing a specific location.
+          example: 11014596-71b0-4b3e-b8c0-1c4b15f28b9a
+        name:
+          type: string
+          description: Name of the location.
+          example: Irontown
+        climate:
+          type: string
+          description: Predominant climate of the location.
+          example: Continental
+        terrain:
+          type: string
+          description: Predominant terrain of the location.
+          example: Mountain
+        surface_water:
+          type: string
+          description: Approximate percentage of the location covered by surface water.
+          example: '40'
+        residents:
+          type: array
+          description: People who reside at this location.
+          items:
+            type: string
+            format: uri
+        films:
+          type: array
+          description: Films in which this location appears.
+          items:
+            type: string
+            format: uri
+        url:
+          type: string
+          format: uri
+          description: Canonical URL of the location resource.
+    Species:
+      type: object
+      description: A species classification of a character or creature in the Studio Ghibli films.
+      required: [id, name]
+      properties:
+        id:
+          type: string
+          format: uuid
+          description: Unique identifier representing a specific species.
+          example: af3910a6-429f-4c74-9ad5-dfe1c4aa04f2
+        name:
+          type: string
+          description: Common name of the species.
+          example: Human
+        classification:
+          type: string
+          description: Biological classification (e.g. Mammal, Spirit, Cat).
+          example: Mammal
+        eye_colors:
+          type: string
+          description: Comma-separated list of eye colours observed within the species.
+          example: Black, Blue, Brown, Grey, Green, Hazel
+        hair_colors:
+          type: string
+          description: Comma-separated list of hair colours observed within the species.
+          example: Black, Blonde, Brown, Grey, White
+        people:
+          type: array
+          description: Characters that belong to this species.
+          items:
+            type: string
+            format: uri
+        films:
+          type: array
+          description: Films in which this species appears.
+          items:
+            type: string
+            format: uri
+        url:
+          type: string
+          format: uri
+          description: Canonical URL of the species resource.
+    Vehicle:
+      type: object
+      description: A vehicle that appears in one or more Studio Ghibli films.
+      required: [id, name]
+      properties:
+        id:
+          type: string
+          format: uuid
+          description: Unique identifier representing a specific vehicle.
+          example: 4e09b023-f650-4747-9ab9-eacf14540cfb
+        name:
+          type: string
+          description: Name of the vehicle.
+          example: Air Destroyer Goliath
+        description:
+          type: string
+          description: Short description of the vehicle and its role.
+        vehicle_class:
+          type: string
+          description: Class of the vehicle (e.g. Airship, Aircraft, Submarine).
+          example: Airship
+        length:
+          type: string
+          description: Length of the vehicle (string — may include thousands separators).
+          example: '1,000'
+        pilot:
+          type: string
+          format: uri
+          description: URL reference to the person who pilots the vehicle.
+        films:
+          type: array
+          description: Films in which the vehicle appears.
+          items:
+            type: string
+            format: uri
+        url:
+          type: string
+          format: uri
+          description: Canonical URL of the vehicle resource.
+    Error:
+      type: object
+      description: Error response payload.
+      properties:
+        code:
+          type: integer
+          description: HTTP status code.
+        message:
+          type: string
+          description: Human-readable error message.
+        fields:
+          type: string
+          description: Optional list of fields involved in the error.

@@ -1,0 +1,44 @@
+specification: API Commons Rate Limits
+specificationVersion: '0.1'
+schema: https://raw.githubusercontent.com/api-evangelist/interface-research/main/schema/api-commons.yml#/$defs/RateLimits
+provider: Studio Ghibli API
+providerId: studio-ghibli
+created: '2026-05-29'
+modified: '2026-05-29'
+reconciled: true
+tags:
+  - Rate Limiting
+  - Public API
+  - Free
+  - Anime
+description: >-
+  The community-built Studio Ghibli API (https://github.com/janaipakos/ghibliapi)
+  publishes no per-key, per-IP, or per-account rate limits. The canonical instance
+  is anonymous, free, and bounded only by the hosting provider's underlying limits
+  — historically Heroku's free dyno, now Vercel's serverless function quotas.
+  Consumers should treat the public deployment as best-effort and self-host (the
+  repo is MIT-licensed) for any production workload. No throttling headers are
+  documented; the OpenAPI source declares 400 and 404 as the only documented
+  error responses.
+sources:
+  - https://github.com/janaipakos/ghibliapi
+  - https://raw.githubusercontent.com/janaipakos/ghibliapi/master/public/swagger.yaml
+  - https://ghibliapi.vercel.app
+responseCodes:
+  badRequest: 400
+  notFound: 404
+limits:
+  - name: Public deployment — no documented limits
+    scope: IP
+    metric: varies
+    limit: 'no documented per-key or per-IP rate limit; bounded only by the hosting provider (Vercel) serverless function quota'
+    notes: The API publishes neither numeric request-rate limits nor RateLimit-* headers. For guaranteed availability fork the MIT-licensed repo and self-host.
+policies:
+  - name: Best-effort public availability
+    description: The community instance at ghibliapi.vercel.app is community-operated and offers no SLA. Heavy or production workloads should self-host.
+  - name: Backoff on transient failures
+    description: Treat 5xx responses as transient hosting issues; apply exponential backoff before retrying.
+  - name: Cache aggressively
+    description: All five collections are read-only and update extremely rarely — cache responses at the consumer for hours or days.
+  - name: Self-host for production
+    description: The repo (janaipakos/ghibliapi, MIT) can be forked and deployed to any Node host. The canonical Vercel instance should not be relied on as critical infrastructure.
