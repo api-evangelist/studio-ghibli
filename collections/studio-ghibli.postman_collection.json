@@ -1,0 +1,1966 @@
+{
+  "item": [
+    {
+      "id": "672ccfa7-e377-4a6f-8d9c-134d6476b113",
+      "name": "Films",
+      "description": {
+        "content": "Studio Ghibli theatrical films.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "a9f27b52-40eb-4e22-98f5-925ed1a30bd2",
+          "name": "List Films",
+          "request": {
+            "name": "List Films",
+            "description": {
+              "content": "Return all Studio Ghibli films catalogued by the API.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "films"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "fields",
+                  "value": "<string>",
+                  "description": "Comma-separated list of fields to include in the response. When omitted, all fields are returned."
+                },
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "50",
+                  "description": "Number of results to return. Default is 50; maximum is 250."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "dc395c0a-d9e6-442c-a158-2465a2382b54",
+              "name": "An array of films.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "films"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "fields",
+                      "value": "title,director,release_date"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "50"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"id\": \"2baf70d1-42bb-4437-b551-e5fed5a87abe\",\n    \"title\": \"Castle in the Sky\",\n    \"description\": \"string\",\n    \"director\": \"Hayao Miyazaki\",\n    \"producer\": \"Isao Takahata\",\n    \"release_date\": \"1986\",\n    \"original_title\": \"天空の城ラピュタ\",\n    \"original_title_romanised\": \"Tenkū no shiro Rapyuta\",\n    \"image\": \"https://cmowMAIKJvu.msokqJjPRqswTbIn-ww1GCwXD0UU+klBKBWStG+\",\n    \"movie_banner\": \"http://wYo.idxY,DdSdwVDCZfkvtAPqq5Z,KKbSSQ,YLrZtV1U\",\n    \"running_time\": \"124\",\n    \"rt_score\": \"95\",\n    \"people\": [\n      \"https://EqPCTMJhbHCNZpALoTdpAPYXM.ziEaK3FLfFkmhpxgAYo7catkiQGptLK7RXqnkU\",\n      \"http://vExMKpgjBujsTcmaqqbzYXHnU.iyeTmfX.I6P80JyHZm7z8HCy2MmcERsZ.MsHXHKGgh4i\"\n    ],\n    \"species\": [\n      \"http://LjOg.jivH1foq7fEsb5CC,Q1+suROmZ,nKRGn\",\n      \"https://LmerxtTQuJrlFqnZWJRQeiH.wddSsJefevyg\"\n    ],\n    \"locations\": [\n      \"https://mmGMSJLnKiZzpwG.auuLQLtwYEX-dtz9sYHAfVAk-UuP0A9i7bp3CLCXj47cwHrACLFhpBggKzwn\",\n      \"http://NHyVZMNU.jfxr1koh9GPnd+ScuLK-lKJNiOUICgptXkbc\"\n    ],\n    \"vehicles\": [\n      \"https://wxhRlsMsioxRb.bcpwaPxgySJ-fK5G2FAAo,qkriHKp4XGAEuu6ehCKPrPucvpsbY7qSYdv\",\n      \"http://xcsQBGlAsIgRSs.kczgQe9cks5jZw.OKcFf9UWXsRxywFIwgh6B\"\n    ],\n    \"url\": \"http://sUnFqpiL.sujpKOBWg7uAEU,tn0T8h,MCQuhK82j4UUe3dTp7qO5Zz\"\n  },\n  {\n    \"id\": \"2baf70d1-42bb-4437-b551-e5fed5a87abe\",\n    \"title\": \"Castle in the Sky\",\n    \"description\": \"string\",\n    \"director\": \"Hayao Miyazaki\",\n    \"producer\": \"Isao Takahata\",\n    \"release_date\": \"1986\",\n    \"original_title\": \"天空の城ラピュタ\",\n    \"original_title_romanised\": \"Tenkū no shiro Rapyuta\",\n    \"image\": \"https://BlSThZvKMalLOrMbeoRJWZ.yrk\",\n    \"movie_banner\": \"https://RPbJdDweSVttwQUBfnlUyvQDhjclogvM.hcevTa783TlgKLpbF0vVQQX+nN2-mVZs1y,QpHKRlAvtraAGo\",\n    \"running_time\": \"124\",\n    \"rt_score\": \"95\",\n    \"people\": [\n      \"https://QVIwhQwHIXW.yasbGI-G+d\",\n      \"http://yqoZURpYJCnBrBsGOyMTqPGtXMNroyFp.jzvhfymo4LlcquWavIDapMxvgXcJXHYXDm3TVqRCcUS4oCaeUcoaRysKaohBv\"\n    ],\n    \"species\": [\n      \"http://GGADzuzWKhGRSkWTPE.biieL,+1W0ugtdy6e\",\n      \"https://bNvHWdsvPmJZOoKcpULdeSAxONoZXCfu.ukmkSRZKMRhI,-gepjQbJLj304rryvlRv\"\n    ],\n    \"locations\": [\n      \"https://BDoYJXw.yupikBhsqGyzcuOzw+tok1hHcFVz5Scj8cETbUFctmEsVJTPdwN0nNpzk9pZGzjjr+dzr3zozAPtkjH\",\n      \"http://glbXEBpJPNwjANzFkZiRBlVUdbSVWx.fccdkQ5VtATwzKZ8qYBt-Yi6Yn3Ri6cJUsN\"\n    ],\n    \"vehicles\": [\n      \"http://RiTccJjoUlCmvIXVHMwwbpNGcDKPGUT.qiFEJU-bgXlWQtGgkhwWOnZ39Oq4A3dbSlxFx60f1HN13EPcWUo95FRC+uwg\",\n      \"http://K.dbe,1XHU6rvV\"\n    ],\n    \"url\": \"http://MhZXDmXVmBJmnjefBOmUmzuwgIwZAJBef.sgvkQ+xFmaX\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "dec9685a-dddb-4a92-8649-117884096911",
+              "name": "Bad request — the query parameters or path identifier could not be parsed.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "films"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "fields",
+                      "value": "title,director,release_date"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "50"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 1256,\n  \"message\": \"string\",\n  \"fields\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "15ba9dcd-352d-4efa-8ec3-b629b6642a0e",
+              "name": "Not found — no resource matches the supplied identifier.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "films"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "fields",
+                      "value": "title,director,release_date"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "50"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 1256,\n  \"message\": \"string\",\n  \"fields\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "8b6a6b44-c7af-461c-bcca-7077c885eadd",
+          "name": "Get Film By Id",
+          "request": {
+            "name": "Get Film By Id",
+            "description": {
+              "content": "Return a single film identified by its UUID.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "films",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "fields",
+                  "value": "<string>",
+                  "description": "Comma-separated list of fields to include in the response. When omitted, all fields are returned."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "id",
+                  "description": "(Required) The UUID of the film."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "2fc9e223-a9d6-4361-af30-f799955bbc91",
+              "name": "A single film resource.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "films",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "fields",
+                      "value": "title,director,release_date"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "id",
+                      "description": "(Required) The UUID of the film."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"2baf70d1-42bb-4437-b551-e5fed5a87abe\",\n  \"title\": \"Castle in the Sky\",\n  \"description\": \"string\",\n  \"director\": \"Hayao Miyazaki\",\n  \"producer\": \"Isao Takahata\",\n  \"release_date\": \"1986\",\n  \"original_title\": \"天空の城ラピュタ\",\n  \"original_title_romanised\": \"Tenkū no shiro Rapyuta\",\n  \"image\": \"http://UhQzROQuNnwxcRwagfKpVxpBx.gbjW.9HudVIXt278WmNfmn7qi.P53pHpU1KpP\",\n  \"movie_banner\": \"http://HumSUNZGN.siI1oXdr8EK,BmYU\",\n  \"running_time\": \"124\",\n  \"rt_score\": \"95\",\n  \"people\": [\n    \"http://AtUlHYtfpSKmNTsaNdGK.ttxzjTb92mAdrLafagWKaBJfv8aVO,PZmHZN5mcagO-70ExrcyBoM\",\n    \"http://etaRGZDp.wghV2t4LmqXK4m2YPuqb1mWfnF.,Q7Ph\"\n  ],\n  \"species\": [\n    \"http://fLJumweltZbIX.pgapm6f2C4kz3fb7WXiT-wvKvqyh7NVs4QZKh2RDhn,HyZyCOxjz7jU5X3eodhT8yGT.B-,e2LH\",\n    \"http://VMFFfBSSXoGFnR.plid,VvbbNc\"\n  ],\n  \"locations\": [\n    \"https://SMXrCOcNqGmmsD.eapUrIImq8N,SECV5AD,MUlXi7N2DoxFxNZWv\",\n    \"https://OIpxkTmOKX.spMOokLNiIWg4LgPtxuTz8C0eO0SpCNo0R\"\n  ],\n  \"vehicles\": [\n    \"https://ZOMmSrYeHiqznJrJSTCNLTKbargIyeUI.jjU+Rhp,UpWcrNvAEbXwaHxiIbm0bTSYoe99LPJCrGpIra\",\n    \"https://nsurAJyQRKbEg.ksgiBGPlLD+urR-ifwrV-sGhXoS6IWHiZfcd,PJHgs3EkoA1BqTxI80gtKO,Un6mQL\"\n  ],\n  \"url\": \"http://PfifeMarAQjxdUE.pescDMb49bfC2h7jE5JrJE6sBPyq-Hv+BFcYmI\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "012dea3a-cd8e-44ef-9e59-85a4b056ec28",
+              "name": "Bad request — the query parameters or path identifier could not be parsed.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "films",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "fields",
+                      "value": "title,director,release_date"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "id",
+                      "description": "(Required) The UUID of the film."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 1256,\n  \"message\": \"string\",\n  \"fields\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "afa31b74-1ea6-49c6-b3ea-30443dde0a97",
+              "name": "Not found — no resource matches the supplied identifier.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "films",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "fields",
+                      "value": "title,director,release_date"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "id",
+                      "description": "(Required) The UUID of the film."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 1256,\n  \"message\": \"string\",\n  \"fields\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "ef9b349c-dad9-43fd-b887-b52694c64cb2",
+      "name": "People",
+      "description": {
+        "content": "Characters that appear in Studio Ghibli films.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "3504a4f1-05a0-4537-a7d3-1cfaf8a69a1d",
+          "name": "List People",
+          "request": {
+            "name": "List People",
+            "description": {
+              "content": "Return all the people from across the Studio Ghibli universe.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "people"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "fields",
+                  "value": "<string>",
+                  "description": "Comma-separated list of fields to include in the response. When omitted, all fields are returned."
+                },
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "50",
+                  "description": "Number of results to return. Default is 50; maximum is 250."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "30fe58ed-d747-4c6d-b961-1018c788028c",
+              "name": "An array of people.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "people"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "fields",
+                      "value": "title,director,release_date"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "50"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"id\": \"267649ac-fb1b-11eb-9a03-0242ac130003\",\n    \"name\": \"Haku\",\n    \"gender\": \"Male\",\n    \"age\": \"12\",\n    \"eye_color\": \"Green\",\n    \"hair_color\": \"Green\",\n    \"films\": [\n      \"https://nrVOXiL.cywln87lxSGdwIN6Y5Q1nopiscGxOoxXZ\",\n      \"https://iTRUR.kycxDoOdjOTfJKDWd3MxWGjv7aFzNgC\"\n    ],\n    \"species\": \"http://UkBdnCUlwWFZRfrdWHVuvhsFdRcAnnbv.tnB8Mj,v9leF2m+F3USvzFsF9cxah.yIx+fKX9DCCGFc7GiZGF4jJZWSG9lC9\",\n    \"url\": \"http://dSaJQBvAT.onppTi5nbNCMa-bLgTAOjAeMYvi-+U-Dwf,mXsYJ,Y2W.yItRo6S\"\n  },\n  {\n    \"id\": \"267649ac-fb1b-11eb-9a03-0242ac130003\",\n    \"name\": \"Haku\",\n    \"gender\": \"Male\",\n    \"age\": \"12\",\n    \"eye_color\": \"Green\",\n    \"hair_color\": \"Green\",\n    \"films\": [\n      \"http://rtErdTDFuBsuoOxUJnWr.nxuCiaK8He0hEWhmTUBV6IFCzeGbYhK4mxXg7qFsAs2AFZXPp\",\n      \"http://AIIoMCAuDzxew.twweaWlVH0Tsm7nUsjL5mw1eTOjKja3IurNSDwH-O\"\n    ],\n    \"species\": \"https://xohsjAsExW.oqrMc3-E\",\n    \"url\": \"http://aSgyGHiixEzBCewKtlIrAhNykWWL.okakrvRt7r\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "b260f433-bcb9-4082-b319-c4757a0867ea",
+              "name": "Bad request — the query parameters or path identifier could not be parsed.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "people"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "fields",
+                      "value": "title,director,release_date"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "50"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 1256,\n  \"message\": \"string\",\n  \"fields\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "1c9fbe82-ad1d-4264-8909-84a61dbdad89",
+              "name": "Not found — no resource matches the supplied identifier.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "people"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "fields",
+                      "value": "title,director,release_date"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "50"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 1256,\n  \"message\": \"string\",\n  \"fields\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "676b0d4f-44ed-4299-b413-e8a62bcb7123",
+          "name": "Get Person By Id",
+          "request": {
+            "name": "Get Person By Id",
+            "description": {
+              "content": "Return a single character identified by its UUID.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "people",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "fields",
+                  "value": "<string>",
+                  "description": "Comma-separated list of fields to include in the response. When omitted, all fields are returned."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "id",
+                  "description": "(Required) The UUID of the person."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "049336a9-71da-4148-afd9-2cbeaca9ad0c",
+              "name": "A single person resource.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "people",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "fields",
+                      "value": "title,director,release_date"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "id",
+                      "description": "(Required) The UUID of the person."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"267649ac-fb1b-11eb-9a03-0242ac130003\",\n  \"name\": \"Haku\",\n  \"gender\": \"Male\",\n  \"age\": \"12\",\n  \"eye_color\": \"Green\",\n  \"hair_color\": \"Green\",\n  \"films\": [\n    \"https://UPrCraEVbVeTYqdlvgMReUgGHXnhln.vpthpdPi4OLv4VoytlzgNryaWDCP4rWTQw3SzmHMp,e,7OdAlfpp,-gmJQbAQ0k+TWFBrH5\",\n    \"https://jhgrMDIgyLB.tgTwIJylXDkFCxocYbJxXLR1S,mEPFTAXKbeTWLCc6x3g1St5\"\n  ],\n  \"species\": \"https://xPIjBMYBqvXAKeYvbWqwdQR.rnhibbQD+JiE6IcWYa5EBq7dT7bqsSzOdEa2Due9kMaXR5RpQLbAuWxC2aL.z6es\",\n  \"url\": \"https://sqFfiteTkQTCXoJnkDjaxqHUfihRfCKu.rsKosT4acF-.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "94f3cd59-40d4-4a33-a235-4cd4534b3ed7",
+              "name": "Bad request — the query parameters or path identifier could not be parsed.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "people",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "fields",
+                      "value": "title,director,release_date"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "id",
+                      "description": "(Required) The UUID of the person."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 1256,\n  \"message\": \"string\",\n  \"fields\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "6a3dedc3-fbf9-4a67-8634-37ba03b3f235",
+              "name": "Not found — no resource matches the supplied identifier.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "people",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "fields",
+                      "value": "title,director,release_date"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "id",
+                      "description": "(Required) The UUID of the person."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 1256,\n  \"message\": \"string\",\n  \"fields\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "c6381f64-f43c-47e7-9a09-58e1bbd14bba",
+      "name": "Locations",
+      "description": {
+        "content": "Settings and places that appear in Studio Ghibli films.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "fd1cb190-518f-45b7-840d-f00c01986e06",
+          "name": "List Locations",
+          "request": {
+            "name": "List Locations",
+            "description": {
+              "content": "Return all the locations that have appeared in the Studio Ghibli films.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "locations"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "fields",
+                  "value": "<string>",
+                  "description": "Comma-separated list of fields to include in the response. When omitted, all fields are returned."
+                },
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "50",
+                  "description": "Number of results to return. Default is 50; maximum is 250."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "7cc92dec-c9d8-4c49-a2f9-ecc8a441e959",
+              "name": "An array of locations.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "locations"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "fields",
+                      "value": "title,director,release_date"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "50"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"id\": \"11014596-71b0-4b3e-b8c0-1c4b15f28b9a\",\n    \"name\": \"Irontown\",\n    \"climate\": \"Continental\",\n    \"terrain\": \"Mountain\",\n    \"surface_water\": \"40\",\n    \"residents\": [\n      \"https://nCvcKbH.lhyHbOpiy-wbMHE4AkTessC\",\n      \"https://SNrNuphnPnZiI.nulmhdr9FqZAQQnjAPa2albN\"\n    ],\n    \"films\": [\n      \"http://ovvPQkFwNKGUuOcxpuVRRp.lqoi2l87lUUoo4,uCIJP6NYdDJp+ns7pEHNVjLkn0\",\n      \"https://bWLajScJaUGaaGPPAXrqkCGWYodZSE.nqrhB7ca+nzutwyhBJPvFMGTnBBsymBFl47zWb9laItaaZ6nlmWKCrk0w8iQ4X2NBASqiN6f3uiPAvUF9xtEZ\"\n    ],\n    \"url\": \"http://FKqLfnopbLtCV.rmovGmz\"\n  },\n  {\n    \"id\": \"11014596-71b0-4b3e-b8c0-1c4b15f28b9a\",\n    \"name\": \"Irontown\",\n    \"climate\": \"Continental\",\n    \"terrain\": \"Mountain\",\n    \"surface_water\": \"40\",\n    \"residents\": [\n      \"http://rsTJExB.lrpTRl7j+aft0vBoi.PWW9Wz9V2FhcRKqvp-\",\n      \"https://VIXorSswrZCEJxfVbUsuzVADfn.ffmsj6hUZ8l-pqvOICCEoCC,2sfTnNO0n\"\n    ],\n    \"films\": [\n      \"https://Y.bzmlhSrsetgAo,Uhj89b9guvLrdrDQ-oGZZJ3aiRPAage2\",\n      \"https://bCaJASMUKBclbSDcojyQqBHkSlJ.ziePKdA3ZF0Q2s\"\n    ],\n    \"url\": \"http://oetDoE.crxgbJmj.lzZi,Rz+mITVn9ElHnZ,5RNJbjGQUR6Sl-y0qVMh\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "c96ac220-ad7f-49cb-92d0-457f591eccaa",
+              "name": "Bad request — the query parameters or path identifier could not be parsed.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "locations"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "fields",
+                      "value": "title,director,release_date"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "50"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 1256,\n  \"message\": \"string\",\n  \"fields\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "7012fb7b-e34c-4632-b983-a1f1277c78ae",
+              "name": "Not found — no resource matches the supplied identifier.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "locations"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "fields",
+                      "value": "title,director,release_date"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "50"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 1256,\n  \"message\": \"string\",\n  \"fields\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "721b5a0d-05c0-4686-bebb-4fa666e99834",
+          "name": "Get Location By Id",
+          "request": {
+            "name": "Get Location By Id",
+            "description": {
+              "content": "Return a single location identified by its UUID.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "locations",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "fields",
+                  "value": "<string>",
+                  "description": "Comma-separated list of fields to include in the response. When omitted, all fields are returned."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "id",
+                  "description": "(Required) The UUID of the location."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "74149bb5-6f4d-44c3-bdad-3c797aa916b8",
+              "name": "A single location resource.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "locations",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "fields",
+                      "value": "title,director,release_date"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "id",
+                      "description": "(Required) The UUID of the location."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"11014596-71b0-4b3e-b8c0-1c4b15f28b9a\",\n  \"name\": \"Irontown\",\n  \"climate\": \"Continental\",\n  \"terrain\": \"Mountain\",\n  \"surface_water\": \"40\",\n  \"residents\": [\n    \"https://XonCtTPX.exgNvQn+ehp+.PCGXBx\",\n    \"https://hVTGrPUZEuHpqrZiDSXxGUHNI.kkUseFQx5cBxnTKaul3LJvraXIcDQckwX,y-sFvLgEBqiNijm61kECj\"\n  ],\n  \"films\": [\n    \"https://HaHXjFUZOcFSStpkeZh.fknKc6saF5ElhsjBUWdKYRsYSDbcSL,enm\",\n    \"http://IoaHZWCBcvXRCWNeyccAEiojwXEQo.jiwfJuY5D6FHw6\"\n  ],\n  \"url\": \"https://aVSsFuSmVxJkIUqHZNjRm.lrqqKCd,tcYOM7e6wUTAx11v+zi\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "b1ddd3c2-8cf3-470f-8bb2-e2ee9acf502f",
+              "name": "Bad request — the query parameters or path identifier could not be parsed.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "locations",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "fields",
+                      "value": "title,director,release_date"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "id",
+                      "description": "(Required) The UUID of the location."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 1256,\n  \"message\": \"string\",\n  \"fields\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "3b269ade-6043-4caf-a233-c2b1dc1f9fc7",
+              "name": "Not found — no resource matches the supplied identifier.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "locations",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "fields",
+                      "value": "title,director,release_date"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "id",
+                      "description": "(Required) The UUID of the location."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 1256,\n  \"message\": \"string\",\n  \"fields\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "24834b4d-bc35-4e76-aebf-e9e99b82d8b1",
+      "name": "Species",
+      "description": {
+        "content": "Species classifications of characters appearing in Studio Ghibli films.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "dadd9f7c-08db-4c08-8966-5d4cc0fcbfbb",
+          "name": "List Species",
+          "request": {
+            "name": "List Species",
+            "description": {
+              "content": "Return all the species (human and non-human) that appear in the Studio Ghibli films.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "species"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "fields",
+                  "value": "<string>",
+                  "description": "Comma-separated list of fields to include in the response. When omitted, all fields are returned."
+                },
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "50",
+                  "description": "Number of results to return. Default is 50; maximum is 250."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "31d3abcd-af54-4bf4-9402-d4c123661dc4",
+              "name": "An array of species.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "species"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "fields",
+                      "value": "title,director,release_date"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "50"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"id\": \"af3910a6-429f-4c74-9ad5-dfe1c4aa04f2\",\n    \"name\": \"Human\",\n    \"classification\": \"Mammal\",\n    \"eye_colors\": \"Black, Blue, Brown, Grey, Green, Hazel\",\n    \"hair_colors\": \"Black, Blonde, Brown, Grey, White\",\n    \"people\": [\n      \"https://rWKvrAiMhqyZBwYtL.hztkgImpf,Z3Vy84y\",\n      \"http://HQjgxwMZJTarFMlVKGFmBrClslQTE.yzft5rUHInFxg+NQlxt48t\"\n    ],\n    \"films\": [\n      \"https://qAVyHptPSuOGgnjJbbvksbgGOmYZ.cfxqC9,YjzHS5xbwc8L\",\n      \"https://POs.zzgCMlbl7v6aWSKBTUiJaxzYqa\"\n    ],\n    \"url\": \"https://DdngzrzRAXynbgxDACCcOo.ryIskMz1LUyKRMfwusYLshyyc.YnktJlmqGNY6DY12M.jkU\"\n  },\n  {\n    \"id\": \"af3910a6-429f-4c74-9ad5-dfe1c4aa04f2\",\n    \"name\": \"Human\",\n    \"classification\": \"Mammal\",\n    \"eye_colors\": \"Black, Blue, Brown, Grey, Green, Hazel\",\n    \"hair_colors\": \"Black, Blonde, Brown, Grey, White\",\n    \"people\": [\n      \"http://CPvpspbPRxOOkQgHCkNHxybxgeIZSbIA.jdc6zDYri\",\n      \"http://W.vcuTl+NuSKY.kIv3bKHNIEEmFkBNp4qYGRycrufk3SiQvnR-Cw9BcgAlWSs8Cd9toDPJKLo4\"\n    ],\n    \"films\": [\n      \"https://LljZiGUqpdUItZNabhVH.iyXI74uQlvxVUwOH3ngecmqCctN.Qfa6Cs3.MvFCSINGUmWr0USPiEnUYgpuCY3q9pI7n0+gXm7xW\",\n      \"https://luMKbERdLPldMIaehutXil.skoOqWdCR9Iz9lpGmyiN-iI0eoMDTISdpNtJhj5u4w.rHM3.f9O9NdM8QIKyq,+PbwjGt\"\n    ],\n    \"url\": \"https://uwALayYTlEt.vrfmflIG4rexzzYRUqFohOC1uLzItwYSclBnzM0aPDxZwUPVF2oParcLku\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "2d0a8d4d-7178-4adf-b562-701f8bff3f36",
+              "name": "Bad request — the query parameters or path identifier could not be parsed.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "species"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "fields",
+                      "value": "title,director,release_date"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "50"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 1256,\n  \"message\": \"string\",\n  \"fields\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "bdcfb5d8-d0cd-4e3b-a195-99001adfbca0",
+              "name": "Not found — no resource matches the supplied identifier.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "species"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "fields",
+                      "value": "title,director,release_date"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "50"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 1256,\n  \"message\": \"string\",\n  \"fields\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "47aa0b43-dc65-4c37-8e52-59ea5a1f5f8a",
+          "name": "Get Species By Id",
+          "request": {
+            "name": "Get Species By Id",
+            "description": {
+              "content": "Return a single species identified by its UUID.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "species",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "fields",
+                  "value": "<string>",
+                  "description": "Comma-separated list of fields to include in the response. When omitted, all fields are returned."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "id",
+                  "description": "(Required) The UUID of the species."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "0dafdc4e-2b53-469e-97e3-45b9f430cffa",
+              "name": "A single species resource.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "species",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "fields",
+                      "value": "title,director,release_date"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "id",
+                      "description": "(Required) The UUID of the species."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"af3910a6-429f-4c74-9ad5-dfe1c4aa04f2\",\n  \"name\": \"Human\",\n  \"classification\": \"Mammal\",\n  \"eye_colors\": \"Black, Blue, Brown, Grey, Green, Hazel\",\n  \"hair_colors\": \"Black, Blonde, Brown, Grey, White\",\n  \"people\": [\n    \"https://xlqNdYwEcRIONIXJpRxrvvJBVsPSPUAsb.ihihjf4Y5\",\n    \"https://wPOhgMiSGOKVFYNPzOpO.pdmhxAPTgN.SP+F2kxmL4Iz+Z\"\n  ],\n  \"films\": [\n    \"http://kwoIleXfNSBtmQjP.sht8iizKDj--w7Z1wkcMfwMKuk1AE65SmDrh+opXo1,B0VGz+Q+Mh5Gwa4BW8dmf\",\n    \"http://NFttPtzFYvjMHEPtHlAxphTKJL.upqsjG7ofHINt8OrVhvYYN0LtQ-7R9mdfdQiB-IlXfc3Yzzhrh7ilP,BwuBK5wcmFnz5xX1i\"\n  ],\n  \"url\": \"http://AnrFazvxotIdsdnpLIwQeWYvU.bywirWLTuxe-XqjZS3C8axEUdMjkIO8xqoZWWWBpaPa\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "48f0757f-7926-4b5e-8440-f57f354d2ace",
+              "name": "Bad request — the query parameters or path identifier could not be parsed.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "species",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "fields",
+                      "value": "title,director,release_date"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "id",
+                      "description": "(Required) The UUID of the species."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 1256,\n  \"message\": \"string\",\n  \"fields\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "ea4f72c9-2248-4b24-8907-3440c7ae42a9",
+              "name": "Not found — no resource matches the supplied identifier.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "species",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "fields",
+                      "value": "title,director,release_date"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "id",
+                      "description": "(Required) The UUID of the species."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 1256,\n  \"message\": \"string\",\n  \"fields\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "12059c5c-1d93-44c1-84f1-eaffd236dc3e",
+      "name": "Vehicles",
+      "description": {
+        "content": "Vehicles featured in Studio Ghibli films.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "cafdde33-4a57-493c-ad76-91cae31d5e4f",
+          "name": "List Vehicles",
+          "request": {
+            "name": "List Vehicles",
+            "description": {
+              "content": "Return all the vehicles that have been used in the Studio Ghibli films.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "vehicles"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "fields",
+                  "value": "<string>",
+                  "description": "Comma-separated list of fields to include in the response. When omitted, all fields are returned."
+                },
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "50",
+                  "description": "Number of results to return. Default is 50; maximum is 250."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "2bd48523-38a7-4de8-b291-e4eadde66e56",
+              "name": "An array of vehicles.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "vehicles"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "fields",
+                      "value": "title,director,release_date"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "50"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"id\": \"4e09b023-f650-4747-9ab9-eacf14540cfb\",\n    \"name\": \"Air Destroyer Goliath\",\n    \"description\": \"string\",\n    \"vehicle_class\": \"Airship\",\n    \"length\": \"1,000\",\n    \"pilot\": \"https://pWoyMnPK.ncfbV-U8arXyOpUp1EDlfNVN1hL\",\n    \"films\": [\n      \"https://CMGUzPwls.vrXkTZ7vbrftFCcrdSCH\",\n      \"https://XXqDHOaAurNuSpkSbWxaDY.hqjqQbeXWtHK1CYnwvomeJRVEuBhWE6,0tjz\"\n    ],\n    \"url\": \"https://jHetJQYSyYzFiuRChbvNabUQ.ygkxmWK4qnB-nsXoXu4Byy-aHPn+XbiAL.qX.PO9nsxZx\"\n  },\n  {\n    \"id\": \"4e09b023-f650-4747-9ab9-eacf14540cfb\",\n    \"name\": \"Air Destroyer Goliath\",\n    \"description\": \"string\",\n    \"vehicle_class\": \"Airship\",\n    \"length\": \"1,000\",\n    \"pilot\": \"https://rioZQRmIGwKFNoGSouANSPnzKGbdxeenn.ugL2Rsx1e.dYvvSBftK1OKC\",\n    \"films\": [\n      \"http://YhTvRuUORBThDWeHDWgiVVsnkKftEoX.gvOrbURYvnH0p3AQxN+KA7zTyIRNXOetfZPjJ9AvJQGd1+NqT-Gr9NaL\",\n      \"https://XIvteVwhEZlQteEXqiFfZ.wmyoVMbjyOhqkYKh6-+pu2xtwJwIOu4z,6CCV3zf\"\n    ],\n    \"url\": \"https://znc.isnWp0RjULyjSDOVHP3+OhCQSn\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "66427a91-08bd-413f-91cf-6d4134d1050b",
+              "name": "Bad request — the query parameters or path identifier could not be parsed.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "vehicles"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "fields",
+                      "value": "title,director,release_date"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "50"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 1256,\n  \"message\": \"string\",\n  \"fields\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "274234f9-8606-4435-8197-5b08ce9b8491",
+              "name": "Not found — no resource matches the supplied identifier.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "vehicles"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "fields",
+                      "value": "title,director,release_date"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "50"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 1256,\n  \"message\": \"string\",\n  \"fields\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "bd483f65-fb79-469f-931f-dbd612b44cb9",
+          "name": "Get Vehicle By Id",
+          "request": {
+            "name": "Get Vehicle By Id",
+            "description": {
+              "content": "Return a single vehicle identified by its UUID.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "vehicles",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "fields",
+                  "value": "<string>",
+                  "description": "Comma-separated list of fields to include in the response. When omitted, all fields are returned."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "id",
+                  "description": "(Required) The UUID of the vehicle."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "f2357e30-443a-4f35-a04e-8782c6219552",
+              "name": "A single vehicle resource.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "vehicles",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "fields",
+                      "value": "title,director,release_date"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "id",
+                      "description": "(Required) The UUID of the vehicle."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"4e09b023-f650-4747-9ab9-eacf14540cfb\",\n  \"name\": \"Air Destroyer Goliath\",\n  \"description\": \"string\",\n  \"vehicle_class\": \"Airship\",\n  \"length\": \"1,000\",\n  \"pilot\": \"http://luzRmROZDeCRWzasiiD.uehfdsWGjEgoFvaLKTEo-2Vbxp49-KqQlxXw4w,BMcbA,At2t+8uXnVeM0HpEC2P.-Vwr\",\n  \"films\": [\n    \"http://IpaKGrKSpRKdhaxJy.pdzfeVUnsO.jSbpar\",\n    \"https://lBzyMUoHiVIsEEGDU.iuqEDLw2IfKtomxTkJir+r7iN1Flx\"\n  ],\n  \"url\": \"http://DGgHajUtOgZztS.nqzl0Y6dWHU5GQufsA\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "3cc77551-312e-4aa5-9a19-3643dc6f0b1a",
+              "name": "Bad request — the query parameters or path identifier could not be parsed.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "vehicles",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "fields",
+                      "value": "title,director,release_date"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "id",
+                      "description": "(Required) The UUID of the vehicle."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 1256,\n  \"message\": \"string\",\n  \"fields\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "28f23262-8f37-4283-8923-e943b7df5ada",
+              "name": "Not found — no resource matches the supplied identifier.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "vehicles",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "fields",
+                      "value": "title,director,release_date"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "id",
+                      "description": "(Required) The UUID of the vehicle."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 1256,\n  \"message\": \"string\",\n  \"fields\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://ghibliapi.vercel.app",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "ff52a068-ba6d-4f03-86d5-9ac6a3d64445",
+    "name": "Studio Ghibli API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Studio Ghibli API catalogs the people, places, and things found in the worlds of Studio Ghibli. It is an unofficial, fan-made, community-built REST API that exposes five resource collections: films, people, locations, species, and vehicles. Resources are returned as JSON and cross-link to each other through their canonical URLs, so consumers can traverse the graph (e.g. fetch a film, then its people, then their species) without authentication.\n\nThe original API was hosted at `ghibliapi.herokuapp.com`; after Heroku's free tier ended in November 2022 the canonical instance was archived and moved to `ghibliapi.vercel.app`. Source: https://github.com/janaipakos/ghibliapi (MIT, archived 2022-12-02).\n\n\nContact Support:\n Name: Studio Ghibli API (community-maintained)",
+      "type": "text/plain"
+    }
+  }
+}

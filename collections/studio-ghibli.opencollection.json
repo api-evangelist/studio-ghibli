@@ -1,0 +1,300 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Studio Ghibli API",
+    "version": "1.0.1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Films",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List Films",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://ghibliapi.vercel.app/films",
+            "params": [
+              {
+                "name": "fields",
+                "value": "title,director,release_date",
+                "type": "query",
+                "description": "Comma-separated list of fields to include in the response. When omitted, all fields are returned."
+              },
+              {
+                "name": "limit",
+                "value": "50",
+                "type": "query",
+                "description": "Number of results to return. Default is 50; maximum is 250."
+              }
+            ]
+          },
+          "docs": "Return all Studio Ghibli films catalogued by the API."
+        },
+        {
+          "info": {
+            "name": "Get Film By Id",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://ghibliapi.vercel.app/films/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "58611129-2dbc-4a81-a72f-77ddfc1b1b49",
+                "type": "path",
+                "description": "The UUID of the film."
+              },
+              {
+                "name": "fields",
+                "value": "title,director,release_date",
+                "type": "query",
+                "description": "Comma-separated list of fields to include in the response. When omitted, all fields are returned."
+              }
+            ]
+          },
+          "docs": "Return a single film identified by its UUID."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "People",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List People",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://ghibliapi.vercel.app/people",
+            "params": [
+              {
+                "name": "fields",
+                "value": "title,director,release_date",
+                "type": "query",
+                "description": "Comma-separated list of fields to include in the response. When omitted, all fields are returned."
+              },
+              {
+                "name": "limit",
+                "value": "50",
+                "type": "query",
+                "description": "Number of results to return. Default is 50; maximum is 250."
+              }
+            ]
+          },
+          "docs": "Return all the people from across the Studio Ghibli universe."
+        },
+        {
+          "info": {
+            "name": "Get Person By Id",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://ghibliapi.vercel.app/people/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "267649ac-fb1b-11eb-9a03-0242ac130003",
+                "type": "path",
+                "description": "The UUID of the person."
+              },
+              {
+                "name": "fields",
+                "value": "title,director,release_date",
+                "type": "query",
+                "description": "Comma-separated list of fields to include in the response. When omitted, all fields are returned."
+              }
+            ]
+          },
+          "docs": "Return a single character identified by its UUID."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Locations",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List Locations",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://ghibliapi.vercel.app/locations",
+            "params": [
+              {
+                "name": "fields",
+                "value": "title,director,release_date",
+                "type": "query",
+                "description": "Comma-separated list of fields to include in the response. When omitted, all fields are returned."
+              },
+              {
+                "name": "limit",
+                "value": "50",
+                "type": "query",
+                "description": "Number of results to return. Default is 50; maximum is 250."
+              }
+            ]
+          },
+          "docs": "Return all the locations that have appeared in the Studio Ghibli films."
+        },
+        {
+          "info": {
+            "name": "Get Location By Id",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://ghibliapi.vercel.app/locations/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "11014596-71b0-4b3e-b8c0-1c4b15f28b9a",
+                "type": "path",
+                "description": "The UUID of the location."
+              },
+              {
+                "name": "fields",
+                "value": "title,director,release_date",
+                "type": "query",
+                "description": "Comma-separated list of fields to include in the response. When omitted, all fields are returned."
+              }
+            ]
+          },
+          "docs": "Return a single location identified by its UUID."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Species",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List Species",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://ghibliapi.vercel.app/species",
+            "params": [
+              {
+                "name": "fields",
+                "value": "title,director,release_date",
+                "type": "query",
+                "description": "Comma-separated list of fields to include in the response. When omitted, all fields are returned."
+              },
+              {
+                "name": "limit",
+                "value": "50",
+                "type": "query",
+                "description": "Number of results to return. Default is 50; maximum is 250."
+              }
+            ]
+          },
+          "docs": "Return all the species (human and non-human) that appear in the Studio Ghibli films."
+        },
+        {
+          "info": {
+            "name": "Get Species By Id",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://ghibliapi.vercel.app/species/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "af3910a6-429f-4c74-9ad5-dfe1c4aa04f2",
+                "type": "path",
+                "description": "The UUID of the species."
+              },
+              {
+                "name": "fields",
+                "value": "title,director,release_date",
+                "type": "query",
+                "description": "Comma-separated list of fields to include in the response. When omitted, all fields are returned."
+              }
+            ]
+          },
+          "docs": "Return a single species identified by its UUID."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Vehicles",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List Vehicles",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://ghibliapi.vercel.app/vehicles",
+            "params": [
+              {
+                "name": "fields",
+                "value": "title,director,release_date",
+                "type": "query",
+                "description": "Comma-separated list of fields to include in the response. When omitted, all fields are returned."
+              },
+              {
+                "name": "limit",
+                "value": "50",
+                "type": "query",
+                "description": "Number of results to return. Default is 50; maximum is 250."
+              }
+            ]
+          },
+          "docs": "Return all the vehicles that have been used in the Studio Ghibli films."
+        },
+        {
+          "info": {
+            "name": "Get Vehicle By Id",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://ghibliapi.vercel.app/vehicles/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "4e09b023-f650-4747-9ab9-eacf14540cfb",
+                "type": "path",
+                "description": "The UUID of the vehicle."
+              },
+              {
+                "name": "fields",
+                "value": "title,director,release_date",
+                "type": "query",
+                "description": "Comma-separated list of fields to include in the response. When omitted, all fields are returned."
+              }
+            ]
+          },
+          "docs": "Return a single vehicle identified by its UUID."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
