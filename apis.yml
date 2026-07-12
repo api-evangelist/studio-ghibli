@@ -115,6 +115,8 @@ apis:
   - url: graphql/studio-ghibli-graphql.md
     type: GraphQL
 common:
+- type: DomainSecurity
+  url: security/studio-ghibli-domain-security.yml
 - type: Website
   url: https://ghibliapi.vercel.app
 - type: GitHubRepository
