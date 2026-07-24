@@ -1,0 +1,180 @@
+openapi: 3.0.3
+info:
+  title: Studio Ghibli Films Species API
+  description: 'The Studio Ghibli API catalogs the people, places, and things found in the worlds of Studio Ghibli. It is an unofficial, fan-made, community-built REST API that exposes five resource collections: films, people, locations, species, and vehicles. Resources are returned as JSON and cross-link to each other through their canonical URLs, so consumers can traverse the graph (e.g. fetch a film, then its people, then their species) without authentication.
+
+
+    The original API was hosted at `ghibliapi.herokuapp.com`; after Heroku''s free tier ended in November 2022 the canonical instance was archived and moved to `ghibliapi.vercel.app`. Source: https://github.com/janaipakos/ghibliapi (MIT, archived 2022-12-02).
+
+    '
+  version: 1.0.1
+  license:
+    name: MIT
+    url: https://github.com/janaipakos/ghibliapi/blob/master/LICENSE
+  contact:
+    name: Studio Ghibli API (community-maintained)
+    url: https://github.com/janaipakos/ghibliapi
+  x-generated-from: documentation
+  x-source-spec: https://raw.githubusercontent.com/janaipakos/ghibliapi/master/public/swagger.yaml
+  x-last-validated: '2026-05-29'
+servers:
+- url: https://ghibliapi.vercel.app
+  description: Current canonical instance (Vercel)
+- url: https://ghibliapi.herokuapp.com
+  description: Legacy instance (Heroku free tier ended 2022-11-28; may be unavailable)
+tags:
+- name: Species
+  description: Species classifications of characters appearing in Studio Ghibli films.
+paths:
+  /species:
+    get:
+      operationId: listSpecies
+      summary: List Species
+      description: Return all the species (human and non-human) that appear in the Studio Ghibli films.
+      tags:
+      - Species
+      parameters:
+      - $ref: '#/components/parameters/Fields'
+      - $ref: '#/components/parameters/Limit'
+      responses:
+        '200':
+          description: An array of species.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Species'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '404':
+          $ref: '#/components/responses/NotFound'
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+  /species/{id}:
+    get:
+      operationId: getSpecies
+      summary: Get Species By Id
+      description: Return a single species identified by its UUID.
+      tags:
+      - Species
+      parameters:
+      - $ref: '#/components/parameters/SpeciesId'
+      - $ref: '#/components/parameters/Fields'
+      responses:
+        '200':
+          description: A single species resource.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Species'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '404':
+          $ref: '#/components/responses/NotFound'
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+components:
+  schemas:
+    Species:
+      type: object
+      description: A species classification of a character or creature in the Studio Ghibli films.
+      required:
+      - id
+      - name
+      properties:
+        id:
+          type: string
+          format: uuid
+          description: Unique identifier representing a specific species.
+          example: af3910a6-429f-4c74-9ad5-dfe1c4aa04f2
+        name:
+          type: string
+          description: Common name of the species.
+          example: Human
+        classification:
+          type: string
+          description: Biological classification (e.g. Mammal, Spirit, Cat).
+          example: Mammal
+        eye_colors:
+          type: string
+          description: Comma-separated list of eye colours observed within the species.
+          example: Black, Blue, Brown, Grey, Green, Hazel
+        hair_colors:
+          type: string
+          description: Comma-separated list of hair colours observed within the species.
+          example: Black, Blonde, Brown, Grey, White
+        people:
+          type: array
+          description: Characters that belong to this species.
+          items:
+            type: string
+            format: uri
+        films:
+          type: array
+          description: Films in which this species appears.
+          items:
+            type: string
+            format: uri
+        url:
+          type: string
+          format: uri
+          description: Canonical URL of the species resource.
+    Error:
+      type: object
+      description: Error response payload.
+      properties:
+        code:
+          type: integer
+          description: HTTP status code.
+        message:
+          type: string
+          description: Human-readable error message.
+        fields:
+          type: string
+          description: Optional list of fields involved in the error.
+  responses:
+    NotFound:
+      description: Not found — no resource matches the supplied identifier.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+    BadRequest:
+      description: Bad request — the query parameters or path identifier could not be parsed.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+  parameters:
+    SpeciesId:
+      name: id
+      in: path
+      description: The UUID of the species.
+      required: true
+      schema:
+        type: string
+        format: uuid
+      example: af3910a6-429f-4c74-9ad5-dfe1c4aa04f2
+    Fields:
+      name: fields
+      in: query
+      description: Comma-separated list of fields to include in the response. When omitted, all fields are returned.
+      required: false
+      schema:
+        type: string
+      example: title,director,release_date
+    Limit:
+      name: limit
+      in: query
+      description: Number of results to return. Default is 50; maximum is 250.
+      required: false
+      schema:
+        type: integer
+        format: int32
+        default: 50
+        minimum: 1
+        maximum: 250
+      example: 50

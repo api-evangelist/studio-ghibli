@@ -1,0 +1,180 @@
+openapi: 3.0.3
+info:
+  title: Studio Ghibli Films Locations API
+  description: 'The Studio Ghibli API catalogs the people, places, and things found in the worlds of Studio Ghibli. It is an unofficial, fan-made, community-built REST API that exposes five resource collections: films, people, locations, species, and vehicles. Resources are returned as JSON and cross-link to each other through their canonical URLs, so consumers can traverse the graph (e.g. fetch a film, then its people, then their species) without authentication.
+
+
+    The original API was hosted at `ghibliapi.herokuapp.com`; after Heroku''s free tier ended in November 2022 the canonical instance was archived and moved to `ghibliapi.vercel.app`. Source: https://github.com/janaipakos/ghibliapi (MIT, archived 2022-12-02).
+
+    '
+  version: 1.0.1
+  license:
+    name: MIT
+    url: https://github.com/janaipakos/ghibliapi/blob/master/LICENSE
+  contact:
+    name: Studio Ghibli API (community-maintained)
+    url: https://github.com/janaipakos/ghibliapi
+  x-generated-from: documentation
+  x-source-spec: https://raw.githubusercontent.com/janaipakos/ghibliapi/master/public/swagger.yaml
+  x-last-validated: '2026-05-29'
+servers:
+- url: https://ghibliapi.vercel.app
+  description: Current canonical instance (Vercel)
+- url: https://ghibliapi.herokuapp.com
+  description: Legacy instance (Heroku free tier ended 2022-11-28; may be unavailable)
+tags:
+- name: Locations
+  description: Settings and places that appear in Studio Ghibli films.
+paths:
+  /locations:
+    get:
+      operationId: listLocations
+      summary: List Locations
+      description: Return all the locations that have appeared in the Studio Ghibli films.
+      tags:
+      - Locations
+      parameters:
+      - $ref: '#/components/parameters/Fields'
+      - $ref: '#/components/parameters/Limit'
+      responses:
+        '200':
+          description: An array of locations.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Location'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '404':
+          $ref: '#/components/responses/NotFound'
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+  /locations/{id}:
+    get:
+      operationId: getLocation
+      summary: Get Location By Id
+      description: Return a single location identified by its UUID.
+      tags:
+      - Locations
+      parameters:
+      - $ref: '#/components/parameters/LocationId'
+      - $ref: '#/components/parameters/Fields'
+      responses:
+        '200':
+          description: A single location resource.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Location'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '404':
+          $ref: '#/components/responses/NotFound'
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+components:
+  responses:
+    NotFound:
+      description: Not found — no resource matches the supplied identifier.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+    BadRequest:
+      description: Bad request — the query parameters or path identifier could not be parsed.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+  schemas:
+    Error:
+      type: object
+      description: Error response payload.
+      properties:
+        code:
+          type: integer
+          description: HTTP status code.
+        message:
+          type: string
+          description: Human-readable error message.
+        fields:
+          type: string
+          description: Optional list of fields involved in the error.
+    Location:
+      type: object
+      description: A setting or place that appears in Studio Ghibli films.
+      required:
+      - id
+      - name
+      properties:
+        id:
+          type: string
+          format: uuid
+          description: Unique identifier representing a specific location.
+          example: 11014596-71b0-4b3e-b8c0-1c4b15f28b9a
+        name:
+          type: string
+          description: Name of the location.
+          example: Irontown
+        climate:
+          type: string
+          description: Predominant climate of the location.
+          example: Continental
+        terrain:
+          type: string
+          description: Predominant terrain of the location.
+          example: Mountain
+        surface_water:
+          type: string
+          description: Approximate percentage of the location covered by surface water.
+          example: '40'
+        residents:
+          type: array
+          description: People who reside at this location.
+          items:
+            type: string
+            format: uri
+        films:
+          type: array
+          description: Films in which this location appears.
+          items:
+            type: string
+            format: uri
+        url:
+          type: string
+          format: uri
+          description: Canonical URL of the location resource.
+  parameters:
+    Fields:
+      name: fields
+      in: query
+      description: Comma-separated list of fields to include in the response. When omitted, all fields are returned.
+      required: false
+      schema:
+        type: string
+      example: title,director,release_date
+    LocationId:
+      name: id
+      in: path
+      description: The UUID of the location.
+      required: true
+      schema:
+        type: string
+        format: uuid
+      example: 11014596-71b0-4b3e-b8c0-1c4b15f28b9a
+    Limit:
+      name: limit
+      in: query
+      description: Number of results to return. Default is 50; maximum is 250.
+      required: false
+      schema:
+        type: integer
+        format: int32
+        default: 50
+        minimum: 1
+        maximum: 250
+      example: 50
