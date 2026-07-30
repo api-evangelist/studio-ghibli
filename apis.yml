@@ -1,4 +1,17 @@
 aid: studio-ghibli
+accessModel:
+  pricing: free
+  onboarding: open
+  trial: false
+  try_now: true
+  public: true
+  label: Free · Open access
+  confidence: medium
+  source:
+  - plans
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/studio-ghibli.png
 name: Studio Ghibli
 description: >-
   Studio Ghibli API — a community-built, unofficial, fan-made, MIT-licensed REST API that catalogs the people, places,
@@ -26,94 +39,306 @@ tags:
 - Open Source
 - Read-Only
 apis:
-- name: Studio Ghibli API
-  description: >-
-    Read-only REST API exposing five resource collections (films, people, locations, species, vehicles) that catalog
-    the worlds of Studio Ghibli. No authentication; default page size 50, max 250; optional `fields=` projection.
+- aid: studio-ghibli:studio-ghibli-films-api
+  name: Studio Ghibli Films API
+  description: Studio Ghibli theatrical films.
   humanURL: https://ghibliapi.vercel.app
   baseURL: https://ghibliapi.vercel.app
   tags:
-  - Anime
-  - Studio Ghibli
   - Films
-  - Characters
-  - Locations
-  - Species
-  - Vehicles
   properties:
+  - type: OpenAPI
+    url: openapi/studio-ghibli-films-api-openapi.yml
   - type: Documentation
     url: https://ghibliapi.vercel.app
-  - type: OpenAPI
-    url: openapi/studio-ghibli-openapi.yml
   - type: JSONSchema
     url: json-schema/studio-ghibli-film-schema.json
-    title: Film Schema
   - type: JSONSchema
     url: json-schema/studio-ghibli-person-schema.json
-    title: Person Schema
   - type: JSONSchema
     url: json-schema/studio-ghibli-location-schema.json
-    title: Location Schema
   - type: JSONSchema
     url: json-schema/studio-ghibli-species-schema.json
-    title: Species Schema
   - type: JSONSchema
     url: json-schema/studio-ghibli-vehicle-schema.json
-    title: Vehicle Schema
   - type: JSONStructure
     url: json-structure/studio-ghibli-film-structure.json
-    title: Film Structure
   - type: JSONStructure
     url: json-structure/studio-ghibli-person-structure.json
-    title: Person Structure
   - type: JSONStructure
     url: json-structure/studio-ghibli-location-structure.json
-    title: Location Structure
   - type: JSONStructure
     url: json-structure/studio-ghibli-species-structure.json
-    title: Species Structure
   - type: JSONStructure
     url: json-structure/studio-ghibli-vehicle-structure.json
-    title: Vehicle Structure
   - type: Examples
     url: examples/studio-ghibli-listfilms-example.json
-    title: List Films Example
   - type: Examples
     url: examples/studio-ghibli-getfilm-example.json
-    title: Get Film Example
   - type: Examples
     url: examples/studio-ghibli-listpeople-example.json
-    title: List People Example
   - type: Examples
     url: examples/studio-ghibli-getperson-example.json
-    title: Get Person Example
   - type: Examples
     url: examples/studio-ghibli-listlocations-example.json
-    title: List Locations Example
   - type: Examples
     url: examples/studio-ghibli-getlocation-example.json
-    title: Get Location Example
   - type: Examples
     url: examples/studio-ghibli-listspecies-example.json
-    title: List Species Example
   - type: Examples
     url: examples/studio-ghibli-getspecies-example.json
-    title: Get Species Example
   - type: Examples
     url: examples/studio-ghibli-listvehicles-example.json
-    title: List Vehicles Example
   - type: Examples
     url: examples/studio-ghibli-getvehicle-example.json
-    title: Get Vehicle Example
   - type: Plans
     url: plans/studio-ghibli-plans-pricing.yml
   - type: RateLimits
     url: rate-limits/studio-ghibli-rate-limits.yml
   - type: Authentication
     url: https://github.com/janaipakos/ghibliapi#getting-started
-    title: No Authentication
-  - url: graphql/studio-ghibli-graphql.md
-    type: GraphQL
+  - type: GraphQL
+    url: graphql/studio-ghibli-graphql.md
+- aid: studio-ghibli:studio-ghibli-locations-api
+  name: Studio Ghibli Locations API
+  description: Settings and places that appear in Studio Ghibli films.
+  humanURL: https://ghibliapi.vercel.app
+  baseURL: https://ghibliapi.vercel.app
+  tags:
+  - Locations
+  properties:
+  - type: OpenAPI
+    url: openapi/studio-ghibli-locations-api-openapi.yml
+  - type: Documentation
+    url: https://ghibliapi.vercel.app
+  - type: JSONSchema
+    url: json-schema/studio-ghibli-film-schema.json
+  - type: JSONSchema
+    url: json-schema/studio-ghibli-person-schema.json
+  - type: JSONSchema
+    url: json-schema/studio-ghibli-location-schema.json
+  - type: JSONSchema
+    url: json-schema/studio-ghibli-species-schema.json
+  - type: JSONSchema
+    url: json-schema/studio-ghibli-vehicle-schema.json
+  - type: JSONStructure
+    url: json-structure/studio-ghibli-film-structure.json
+  - type: JSONStructure
+    url: json-structure/studio-ghibli-person-structure.json
+  - type: JSONStructure
+    url: json-structure/studio-ghibli-location-structure.json
+  - type: JSONStructure
+    url: json-structure/studio-ghibli-species-structure.json
+  - type: JSONStructure
+    url: json-structure/studio-ghibli-vehicle-structure.json
+  - type: Examples
+    url: examples/studio-ghibli-listfilms-example.json
+  - type: Examples
+    url: examples/studio-ghibli-getfilm-example.json
+  - type: Examples
+    url: examples/studio-ghibli-listpeople-example.json
+  - type: Examples
+    url: examples/studio-ghibli-getperson-example.json
+  - type: Examples
+    url: examples/studio-ghibli-listlocations-example.json
+  - type: Examples
+    url: examples/studio-ghibli-getlocation-example.json
+  - type: Examples
+    url: examples/studio-ghibli-listspecies-example.json
+  - type: Examples
+    url: examples/studio-ghibli-getspecies-example.json
+  - type: Examples
+    url: examples/studio-ghibli-listvehicles-example.json
+  - type: Examples
+    url: examples/studio-ghibli-getvehicle-example.json
+  - type: Plans
+    url: plans/studio-ghibli-plans-pricing.yml
+  - type: RateLimits
+    url: rate-limits/studio-ghibli-rate-limits.yml
+  - type: Authentication
+    url: https://github.com/janaipakos/ghibliapi#getting-started
+  - type: GraphQL
+    url: graphql/studio-ghibli-graphql.md
+- aid: studio-ghibli:studio-ghibli-people-api
+  name: Studio Ghibli People API
+  description: Characters that appear in Studio Ghibli films.
+  humanURL: https://ghibliapi.vercel.app
+  baseURL: https://ghibliapi.vercel.app
+  tags:
+  - People
+  properties:
+  - type: OpenAPI
+    url: openapi/studio-ghibli-people-api-openapi.yml
+  - type: Documentation
+    url: https://ghibliapi.vercel.app
+  - type: JSONSchema
+    url: json-schema/studio-ghibli-film-schema.json
+  - type: JSONSchema
+    url: json-schema/studio-ghibli-person-schema.json
+  - type: JSONSchema
+    url: json-schema/studio-ghibli-location-schema.json
+  - type: JSONSchema
+    url: json-schema/studio-ghibli-species-schema.json
+  - type: JSONSchema
+    url: json-schema/studio-ghibli-vehicle-schema.json
+  - type: JSONStructure
+    url: json-structure/studio-ghibli-film-structure.json
+  - type: JSONStructure
+    url: json-structure/studio-ghibli-person-structure.json
+  - type: JSONStructure
+    url: json-structure/studio-ghibli-location-structure.json
+  - type: JSONStructure
+    url: json-structure/studio-ghibli-species-structure.json
+  - type: JSONStructure
+    url: json-structure/studio-ghibli-vehicle-structure.json
+  - type: Examples
+    url: examples/studio-ghibli-listfilms-example.json
+  - type: Examples
+    url: examples/studio-ghibli-getfilm-example.json
+  - type: Examples
+    url: examples/studio-ghibli-listpeople-example.json
+  - type: Examples
+    url: examples/studio-ghibli-getperson-example.json
+  - type: Examples
+    url: examples/studio-ghibli-listlocations-example.json
+  - type: Examples
+    url: examples/studio-ghibli-getlocation-example.json
+  - type: Examples
+    url: examples/studio-ghibli-listspecies-example.json
+  - type: Examples
+    url: examples/studio-ghibli-getspecies-example.json
+  - type: Examples
+    url: examples/studio-ghibli-listvehicles-example.json
+  - type: Examples
+    url: examples/studio-ghibli-getvehicle-example.json
+  - type: Plans
+    url: plans/studio-ghibli-plans-pricing.yml
+  - type: RateLimits
+    url: rate-limits/studio-ghibli-rate-limits.yml
+  - type: Authentication
+    url: https://github.com/janaipakos/ghibliapi#getting-started
+  - type: GraphQL
+    url: graphql/studio-ghibli-graphql.md
+- aid: studio-ghibli:studio-ghibli-species-api
+  name: Studio Ghibli Species API
+  description: Species classifications of characters appearing in Studio Ghibli films.
+  humanURL: https://ghibliapi.vercel.app
+  baseURL: https://ghibliapi.vercel.app
+  tags:
+  - Species
+  properties:
+  - type: OpenAPI
+    url: openapi/studio-ghibli-species-api-openapi.yml
+  - type: Documentation
+    url: https://ghibliapi.vercel.app
+  - type: JSONSchema
+    url: json-schema/studio-ghibli-film-schema.json
+  - type: JSONSchema
+    url: json-schema/studio-ghibli-person-schema.json
+  - type: JSONSchema
+    url: json-schema/studio-ghibli-location-schema.json
+  - type: JSONSchema
+    url: json-schema/studio-ghibli-species-schema.json
+  - type: JSONSchema
+    url: json-schema/studio-ghibli-vehicle-schema.json
+  - type: JSONStructure
+    url: json-structure/studio-ghibli-film-structure.json
+  - type: JSONStructure
+    url: json-structure/studio-ghibli-person-structure.json
+  - type: JSONStructure
+    url: json-structure/studio-ghibli-location-structure.json
+  - type: JSONStructure
+    url: json-structure/studio-ghibli-species-structure.json
+  - type: JSONStructure
+    url: json-structure/studio-ghibli-vehicle-structure.json
+  - type: Examples
+    url: examples/studio-ghibli-listfilms-example.json
+  - type: Examples
+    url: examples/studio-ghibli-getfilm-example.json
+  - type: Examples
+    url: examples/studio-ghibli-listpeople-example.json
+  - type: Examples
+    url: examples/studio-ghibli-getperson-example.json
+  - type: Examples
+    url: examples/studio-ghibli-listlocations-example.json
+  - type: Examples
+    url: examples/studio-ghibli-getlocation-example.json
+  - type: Examples
+    url: examples/studio-ghibli-listspecies-example.json
+  - type: Examples
+    url: examples/studio-ghibli-getspecies-example.json
+  - type: Examples
+    url: examples/studio-ghibli-listvehicles-example.json
+  - type: Examples
+    url: examples/studio-ghibli-getvehicle-example.json
+  - type: Plans
+    url: plans/studio-ghibli-plans-pricing.yml
+  - type: RateLimits
+    url: rate-limits/studio-ghibli-rate-limits.yml
+  - type: Authentication
+    url: https://github.com/janaipakos/ghibliapi#getting-started
+  - type: GraphQL
+    url: graphql/studio-ghibli-graphql.md
+- aid: studio-ghibli:studio-ghibli-vehicles-api
+  name: Studio Ghibli Vehicles API
+  description: Vehicles featured in Studio Ghibli films.
+  humanURL: https://ghibliapi.vercel.app
+  baseURL: https://ghibliapi.vercel.app
+  tags:
+  - Vehicles
+  properties:
+  - type: OpenAPI
+    url: openapi/studio-ghibli-vehicles-api-openapi.yml
+  - type: Documentation
+    url: https://ghibliapi.vercel.app
+  - type: JSONSchema
+    url: json-schema/studio-ghibli-film-schema.json
+  - type: JSONSchema
+    url: json-schema/studio-ghibli-person-schema.json
+  - type: JSONSchema
+    url: json-schema/studio-ghibli-location-schema.json
+  - type: JSONSchema
+    url: json-schema/studio-ghibli-species-schema.json
+  - type: JSONSchema
+    url: json-schema/studio-ghibli-vehicle-schema.json
+  - type: JSONStructure
+    url: json-structure/studio-ghibli-film-structure.json
+  - type: JSONStructure
+    url: json-structure/studio-ghibli-person-structure.json
+  - type: JSONStructure
+    url: json-structure/studio-ghibli-location-structure.json
+  - type: JSONStructure
+    url: json-structure/studio-ghibli-species-structure.json
+  - type: JSONStructure
+    url: json-structure/studio-ghibli-vehicle-structure.json
+  - type: Examples
+    url: examples/studio-ghibli-listfilms-example.json
+  - type: Examples
+    url: examples/studio-ghibli-getfilm-example.json
+  - type: Examples
+    url: examples/studio-ghibli-listpeople-example.json
+  - type: Examples
+    url: examples/studio-ghibli-getperson-example.json
+  - type: Examples
+    url: examples/studio-ghibli-listlocations-example.json
+  - type: Examples
+    url: examples/studio-ghibli-getlocation-example.json
+  - type: Examples
+    url: examples/studio-ghibli-listspecies-example.json
+  - type: Examples
+    url: examples/studio-ghibli-getspecies-example.json
+  - type: Examples
+    url: examples/studio-ghibli-listvehicles-example.json
+  - type: Examples
+    url: examples/studio-ghibli-getvehicle-example.json
+  - type: Plans
+    url: plans/studio-ghibli-plans-pricing.yml
+  - type: RateLimits
+    url: rate-limits/studio-ghibli-rate-limits.yml
+  - type: Authentication
+    url: https://github.com/janaipakos/ghibliapi#getting-started
+  - type: GraphQL
+    url: graphql/studio-ghibli-graphql.md
 common:
 - type: AgenticAccess
   url: agentic-access/studio-ghibli-agentic-access.yml
