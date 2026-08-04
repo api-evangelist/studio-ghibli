@@ -1,0 +1,22 @@
+{
+  "provider": "studio-ghibli",
+  "sources": [
+    "studio-ghibli-films-api-openapi.yml",
+    "studio-ghibli-locations-api-openapi.yml",
+    "studio-ghibli-people-api-openapi.yml",
+    "studio-ghibli-species-api-openapi.yml",
+    "studio-ghibli-vehicles-api-openapi.yml"
+  ],
+  "outputs": [
+    "studio-ghibli-films-api-openapi.yml",
+    "studio-ghibli-locations-api-openapi.yml",
+    "studio-ghibli-people-api-openapi.yml",
+    "studio-ghibli-species-api-openapi.yml",
+    "studio-ghibli-vehicles-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
