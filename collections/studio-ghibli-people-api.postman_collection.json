@@ -1,0 +1,410 @@
+{
+  "item": [
+    {
+      "id": "3b5fc386-6a71-4bf1-a05b-1d59e69dcb9f",
+      "name": "People",
+      "description": {
+        "content": "Characters that appear in Studio Ghibli films.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "70fd3b6e-a87f-43c2-a638-30c8b77d44a4",
+          "name": "List People",
+          "request": {
+            "name": "List People",
+            "description": {
+              "content": "Return all the people from across the Studio Ghibli universe.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "people"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "fields",
+                  "value": "<string>",
+                  "description": "Comma-separated list of fields to include in the response. When omitted, all fields are returned."
+                },
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "50",
+                  "description": "Number of results to return. Default is 50; maximum is 250."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "3d5439be-9e7b-411b-9a3a-a14408c6f54a",
+              "name": "An array of people.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "people"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "fields",
+                      "value": "title,director,release_date"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "50"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"id\": \"267649ac-fb1b-11eb-9a03-0242ac130003\",\n    \"name\": \"Haku\",\n    \"gender\": \"Male\",\n    \"age\": \"12\",\n    \"eye_color\": \"Green\",\n    \"hair_color\": \"Green\",\n    \"films\": [\n      \"https://meYMGqNjZOZFnsdqKqtrZroHdWkbgPoOb.ntef,.nzcydYgsC35\",\n      \"http://USVJ.jvhpR.LphZAbhYjGFSl9fPyf0zVlC8HOYZOdJYlt9k8+LsbNXNxwjn2B7IeeeHGn7ZPhdcjGPUJL\"\n    ],\n    \"species\": \"https://AeqkfLFEWDTcgNCexvsk.fdfzB1Yv-YsqTXXqZX.xstVXk1h4GD32ouZn8,kaWMsk8A6v6p07Z0+v\",\n    \"url\": \"http://VQSTxFzqPBKmHKrYqH.mcjhDcqm\"\n  },\n  {\n    \"id\": \"267649ac-fb1b-11eb-9a03-0242ac130003\",\n    \"name\": \"Haku\",\n    \"gender\": \"Male\",\n    \"age\": \"12\",\n    \"eye_color\": \"Green\",\n    \"hair_color\": \"Green\",\n    \"films\": [\n      \"https://iEiQDpHAPyck.sgU+5TiAV2RqD0omoYnmub22L9f1q6J10hHFy+ITtY1gZtvoVhEPrUCq\",\n      \"http://GUDoLejkflKz.xjrQr-b0ZiAGPkfEGxNYw,ZftHMeEOvZVQVXyPFUm+5Ud21gfbkCfiCNo\"\n    ],\n    \"species\": \"https://zpWuhpbaluzHyljaxZ.uudkuMfymMnAvKNcigFfgsmaSw1SLFnvsWCOVSBEPLCStiAJ2m\",\n    \"url\": \"https://OcQB.rmf74xFh1M4BMfJto62CbC-wtE6WHpnSJUqBIDb6-QaealMiO33\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "6acb88bd-1e09-4522-a7cc-cd82d24364b3",
+              "name": "Bad request — the query parameters or path identifier could not be parsed.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "people"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "fields",
+                      "value": "title,director,release_date"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "50"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 7583,\n  \"message\": \"string\",\n  \"fields\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "2081f72b-022d-4aaf-88ee-65bb1cd0555e",
+              "name": "Not found — no resource matches the supplied identifier.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "people"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "fields",
+                      "value": "title,director,release_date"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "50"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 7583,\n  \"message\": \"string\",\n  \"fields\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "8b8d40ba-02b0-4db3-88ea-bb92dda3c922",
+          "name": "Get Person By Id",
+          "request": {
+            "name": "Get Person By Id",
+            "description": {
+              "content": "Return a single character identified by its UUID.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "people",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "fields",
+                  "value": "<string>",
+                  "description": "Comma-separated list of fields to include in the response. When omitted, all fields are returned."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "id",
+                  "description": "(Required) The UUID of the person."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "8f746041-df35-441c-893d-22793c9a1b6d",
+              "name": "A single person resource.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "people",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "fields",
+                      "value": "title,director,release_date"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "id",
+                      "description": "(Required) The UUID of the person."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"267649ac-fb1b-11eb-9a03-0242ac130003\",\n  \"name\": \"Haku\",\n  \"gender\": \"Male\",\n  \"age\": \"12\",\n  \"eye_color\": \"Green\",\n  \"hair_color\": \"Green\",\n  \"films\": [\n    \"https://tSqVksa.nmWreUsFVe4\",\n    \"http://NAaadWmMQETBxmY.ktbuSvdJj\"\n  ],\n  \"species\": \"http://hJWPIZUvq.cnW4RGhs,J8+9kfGK1jC\",\n  \"url\": \"http://bGt.hjbny5CZZ6SiRJlGuRukwhR3eHtG\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "e15ba165-8d83-4b35-a484-52da3ab53f2d",
+              "name": "Bad request — the query parameters or path identifier could not be parsed.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "people",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "fields",
+                      "value": "title,director,release_date"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "id",
+                      "description": "(Required) The UUID of the person."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 7583,\n  \"message\": \"string\",\n  \"fields\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "4ffbfefd-95c5-41f2-a64d-78da7e19165c",
+              "name": "Not found — no resource matches the supplied identifier.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "people",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "fields",
+                      "value": "title,director,release_date"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "id",
+                      "description": "(Required) The UUID of the person."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 7583,\n  \"message\": \"string\",\n  \"fields\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://ghibliapi.vercel.app",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "354701cd-c2a8-4bc7-a090-f3995d98ca14",
+    "name": "Studio Ghibli Films People API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Studio Ghibli API catalogs the people, places, and things found in the worlds of Studio Ghibli. It is an unofficial, fan-made, community-built REST API that exposes five resource collections: films, people, locations, species, and vehicles. Resources are returned as JSON and cross-link to each other through their canonical URLs, so consumers can traverse the graph (e.g. fetch a film, then its people, then their species) without authentication.\n\nThe original API was hosted at `ghibliapi.herokuapp.com`; after Heroku's free tier ended in November 2022 the canonical instance was archived and moved to `ghibliapi.vercel.app`. Source: https://github.com/janaipakos/ghibliapi (MIT, archived 2022-12-02).\n\n\nContact Support:\n Name: Studio Ghibli API (community-maintained)",
+      "type": "text/plain"
+    }
+  }
+}

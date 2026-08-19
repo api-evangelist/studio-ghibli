@@ -1,0 +1,410 @@
+{
+  "item": [
+    {
+      "id": "52fb7a36-91eb-4e99-b1f5-a2e972494f97",
+      "name": "Films",
+      "description": {
+        "content": "Studio Ghibli theatrical films.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "77bd7ee2-e470-40cf-8b5f-9e1c07babdd0",
+          "name": "List Films",
+          "request": {
+            "name": "List Films",
+            "description": {
+              "content": "Return all Studio Ghibli films catalogued by the API.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "films"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "fields",
+                  "value": "<string>",
+                  "description": "Comma-separated list of fields to include in the response. When omitted, all fields are returned."
+                },
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "50",
+                  "description": "Number of results to return. Default is 50; maximum is 250."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "7fc8f4f3-a4dd-43d9-b60a-a8ffdbba52b3",
+              "name": "An array of films.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "films"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "fields",
+                      "value": "title,director,release_date"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "50"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"id\": \"2baf70d1-42bb-4437-b551-e5fed5a87abe\",\n    \"title\": \"Castle in the Sky\",\n    \"description\": \"string\",\n    \"director\": \"Hayao Miyazaki\",\n    \"producer\": \"Isao Takahata\",\n    \"release_date\": \"1986\",\n    \"original_title\": \"天空の城ラピュタ\",\n    \"original_title_romanised\": \"Tenkū no shiro Rapyuta\",\n    \"image\": \"http://QaURZJfguVJwKeIGC.gdqu,HuYo9HVnVQY9OQ,-DCQEdgmMPUJ\",\n    \"movie_banner\": \"https://BYpbxOIdBCQ.agyw5NFWOseGasOwK7hbLUpxg.HFxfRX+zWzLnaOtdqNnMatwucSY3nQaN5Q+sdJ,cuWj,XQS9dyyWfN\",\n    \"running_time\": \"124\",\n    \"rt_score\": \"95\",\n    \"people\": [\n      \"https://lxFlyfkDTISaRdigfDgTXRONQk.rijitRHdMGh\",\n      \"https://OljlkCdklrsbnuEKzEivitexihYnD.mjaqjsi-IS04.NzRaM4,mnT.uQDZzHtQ4Xtz9VX64McG\"\n    ],\n    \"species\": [\n      \"http://dpmXWZWJaO.gvugTEvz0YHk9hsT-YpODim501NINQLW.NH\",\n      \"http://EVeuih.mtnsT.KVVwewHQ0HdQq6u30Ij8oXvZQxipno,TBkx\"\n    ],\n    \"locations\": [\n      \"https://UApEwCMsSQcnmHeRMIsWurJAbW.wzrZvnhVRhDVtBFMVuluLZhPQ1tt2J\",\n      \"https://CheVVMQreGTuWiDGgmWYJgZHLpoDjUB.kxetTG,N,HBadVZMJM6ltSEmVEBgHHHy0O4utnlN2tAEc\"\n    ],\n    \"vehicles\": [\n      \"https://sGtRuKbwSDBaKmggOVIk.xxblLLLthuskJVmOr4YFI\",\n      \"http://YXNqbYxxmNwYXCLdQWGENPqoaqctHzrd.olilcrObGlI,WumDOa0k9.pDsI2Xe\"\n    ],\n    \"url\": \"http://ANiZXn.unzCsyatAn4NgbHKKq.toiAGOC4h-vz2YXH39S-R\"\n  },\n  {\n    \"id\": \"2baf70d1-42bb-4437-b551-e5fed5a87abe\",\n    \"title\": \"Castle in the Sky\",\n    \"description\": \"string\",\n    \"director\": \"Hayao Miyazaki\",\n    \"producer\": \"Isao Takahata\",\n    \"release_date\": \"1986\",\n    \"original_title\": \"天空の城ラピュタ\",\n    \"original_title_romanised\": \"Tenkū no shiro Rapyuta\",\n    \"image\": \"https://OigdoUnGwgDxZDmFovuBNs.zgGhDxEosknEBDh0pDRkfr75iOfDts\",\n    \"movie_banner\": \"https://ypZqwxmOc.zmlEC8e6RWEO,b2gL2az02jk5E4RtD7yxaU\",\n    \"running_time\": \"124\",\n    \"rt_score\": \"95\",\n    \"people\": [\n      \"http://PMZzMPiTntwTWUeISEjhe.uhlaZidVMOR4wOfXclUQwfUxkS4KIpb0K+xQ0LbJQj0r2i\",\n      \"https://MgQ.nqhMLxuNtCvfOQORVh5A8aI4LydHe5FbRgF8bEB7qBN8TZmnFm\"\n    ],\n    \"species\": [\n      \"http://buugNIL.dfaoeyWt0idi9bWopY,1o-mw3s2xYZHZTjMypivxg+VvNpmXyIsBzZeVht0xco\",\n      \"https://vmKfOVwuknVfhafeVJOquk.znAbV\"\n    ],\n    \"locations\": [\n      \"http://xAF.qwjeoOWRbkPCCdzjQuFRuIScwtbQsk0r1mJypkchN47hIV\",\n      \"http://XxQPdVmBZT.jpabNbAEgPCaLyEE9Ca+KRJTn8F.Bn9HFVi\"\n    ],\n    \"vehicles\": [\n      \"http://SVUisJVIfcQuKKgXdvEL.ksyRKuN1TnIIw9ImFIuTQjQ62,eAVMfa9pP.gAvjMSKltr\",\n      \"https://n.rmzwwJIdGsAzapClI85\"\n    ],\n    \"url\": \"https://PdwodqGDrfjyeu.xnXZr0UbZJI+pJ5vfVVqs4yWWHvBWRSqoWA0DmDHJo0YVbXfXdl\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "66844e90-d82c-4060-93d1-ed938af4d965",
+              "name": "Bad request — the query parameters or path identifier could not be parsed.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "films"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "fields",
+                      "value": "title,director,release_date"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "50"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 5144,\n  \"message\": \"string\",\n  \"fields\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "1643bc71-ca29-4a32-99f0-0a2a86a07d53",
+              "name": "Not found — no resource matches the supplied identifier.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "films"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "fields",
+                      "value": "title,director,release_date"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "50"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 5144,\n  \"message\": \"string\",\n  \"fields\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "b0f5e30a-4364-47c2-8a9b-a97c3120d7ad",
+          "name": "Get Film By Id",
+          "request": {
+            "name": "Get Film By Id",
+            "description": {
+              "content": "Return a single film identified by its UUID.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "films",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "fields",
+                  "value": "<string>",
+                  "description": "Comma-separated list of fields to include in the response. When omitted, all fields are returned."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "id",
+                  "description": "(Required) The UUID of the film."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "c2275729-26c8-4f02-b160-cbf98e0050df",
+              "name": "A single film resource.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "films",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "fields",
+                      "value": "title,director,release_date"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "id",
+                      "description": "(Required) The UUID of the film."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"2baf70d1-42bb-4437-b551-e5fed5a87abe\",\n  \"title\": \"Castle in the Sky\",\n  \"description\": \"string\",\n  \"director\": \"Hayao Miyazaki\",\n  \"producer\": \"Isao Takahata\",\n  \"release_date\": \"1986\",\n  \"original_title\": \"天空の城ラピュタ\",\n  \"original_title_romanised\": \"Tenkū no shiro Rapyuta\",\n  \"image\": \"http://LCyKwzVBQuiVONNicXBDHkkhPQ.wtylJl2Rc1sqIx5uuj7XjnFbd+ciMRNllSVphW6os4BSiK9kKm\",\n  \"movie_banner\": \"https://oqwaePU.vkIcmq+R-rA32S81ObZXsfhYc1v\",\n  \"running_time\": \"124\",\n  \"rt_score\": \"95\",\n  \"people\": [\n    \"http://MjYDLEpNGInbsOKzQdwh.dsxqFDKqAWrOxduL1llT0\",\n    \"https://b.pvRUYYgzCFzLSAHvM928Do-8loqdN7Cf\"\n  ],\n  \"species\": [\n    \"https://DHXuRNFgFpLMZleTZQIeEYGqr.lkbqwSbOHCe3b\",\n    \"https://ngXHKmzEQynKlDRWJWHfaVhvPYfq.qjdlJ7GIQUGxypd.tJvjisqtx+IaX8Cr.\"\n  ],\n  \"locations\": [\n    \"http://tpsLukEeyKVmUUHvGAf.gcfnv\",\n    \"http://pDZoytSnSCnB.oogtoOowFGiUYwDPsefI.mAej\"\n  ],\n  \"vehicles\": [\n    \"http://I.axn+,i6AFt34GmZvgLJqiTnLgzoKOsFeYHvhDfgl\",\n    \"http://XpKumxbwHuZJ.dubn.j.AdKyqxpb0W0r67RvwlwIodYoWE4z63.1KWvvMECWmAZBI,IKacxfp534acPe.UFUCcimMW8vvv.\"\n  ],\n  \"url\": \"http://LbbTdrLWFqnsbJMLbdm.wujdrEoLOXtHplDHouOwRnmP2vgbimza-6uYx2Ji1udG1ln9uTC,F7+c5pHzeryWERib1bwW5\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "14a74658-fdcb-4590-9021-bdd91d30de61",
+              "name": "Bad request — the query parameters or path identifier could not be parsed.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "films",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "fields",
+                      "value": "title,director,release_date"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "id",
+                      "description": "(Required) The UUID of the film."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 5144,\n  \"message\": \"string\",\n  \"fields\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "8413b1f8-b86c-4daf-b238-cc3c007bd690",
+              "name": "Not found — no resource matches the supplied identifier.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "films",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "fields",
+                      "value": "title,director,release_date"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "id",
+                      "description": "(Required) The UUID of the film."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 5144,\n  \"message\": \"string\",\n  \"fields\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://ghibliapi.vercel.app",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "4695d96c-2e24-4d80-8aea-23d1d8d5f1f9",
+    "name": "Studio Ghibli Films API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Studio Ghibli API catalogs the people, places, and things found in the worlds of Studio Ghibli. It is an unofficial, fan-made, community-built REST API that exposes five resource collections: films, people, locations, species, and vehicles. Resources are returned as JSON and cross-link to each other through their canonical URLs, so consumers can traverse the graph (e.g. fetch a film, then its people, then their species) without authentication.\n\nThe original API was hosted at `ghibliapi.herokuapp.com`; after Heroku's free tier ended in November 2022 the canonical instance was archived and moved to `ghibliapi.vercel.app`. Source: https://github.com/janaipakos/ghibliapi (MIT, archived 2022-12-02).\n\n\nContact Support:\n Name: Studio Ghibli API (community-maintained)",
+      "type": "text/plain"
+    }
+  }
+}

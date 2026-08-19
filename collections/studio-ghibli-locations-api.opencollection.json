@@ -1,0 +1,68 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Studio Ghibli Films Locations API",
+    "version": "1.0.1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Locations",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List Locations",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://ghibliapi.vercel.app/locations",
+            "params": [
+              {
+                "name": "fields",
+                "value": "title,director,release_date",
+                "type": "query",
+                "description": "Comma-separated list of fields to include in the response. When omitted, all fields are returned."
+              },
+              {
+                "name": "limit",
+                "value": "50",
+                "type": "query",
+                "description": "Number of results to return. Default is 50; maximum is 250."
+              }
+            ]
+          },
+          "docs": "Return all the locations that have appeared in the Studio Ghibli films."
+        },
+        {
+          "info": {
+            "name": "Get Location By Id",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://ghibliapi.vercel.app/locations/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "11014596-71b0-4b3e-b8c0-1c4b15f28b9a",
+                "type": "path",
+                "description": "The UUID of the location."
+              },
+              {
+                "name": "fields",
+                "value": "title,director,release_date",
+                "type": "query",
+                "description": "Comma-separated list of fields to include in the response. When omitted, all fields are returned."
+              }
+            ]
+          },
+          "docs": "Return a single location identified by its UUID."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

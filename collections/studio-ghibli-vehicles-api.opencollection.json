@@ -1,0 +1,68 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Studio Ghibli Films Vehicles API",
+    "version": "1.0.1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Vehicles",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List Vehicles",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://ghibliapi.vercel.app/vehicles",
+            "params": [
+              {
+                "name": "fields",
+                "value": "title,director,release_date",
+                "type": "query",
+                "description": "Comma-separated list of fields to include in the response. When omitted, all fields are returned."
+              },
+              {
+                "name": "limit",
+                "value": "50",
+                "type": "query",
+                "description": "Number of results to return. Default is 50; maximum is 250."
+              }
+            ]
+          },
+          "docs": "Return all the vehicles that have been used in the Studio Ghibli films."
+        },
+        {
+          "info": {
+            "name": "Get Vehicle By Id",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://ghibliapi.vercel.app/vehicles/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "4e09b023-f650-4747-9ab9-eacf14540cfb",
+                "type": "path",
+                "description": "The UUID of the vehicle."
+              },
+              {
+                "name": "fields",
+                "value": "title,director,release_date",
+                "type": "query",
+                "description": "Comma-separated list of fields to include in the response. When omitted, all fields are returned."
+              }
+            ]
+          },
+          "docs": "Return a single vehicle identified by its UUID."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

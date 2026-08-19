@@ -1,0 +1,410 @@
+{
+  "item": [
+    {
+      "id": "2bfebd1c-1995-484e-aad7-b37070495bd2",
+      "name": "Locations",
+      "description": {
+        "content": "Settings and places that appear in Studio Ghibli films.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "af9fdd50-1956-403f-8012-7fa22880f19b",
+          "name": "List Locations",
+          "request": {
+            "name": "List Locations",
+            "description": {
+              "content": "Return all the locations that have appeared in the Studio Ghibli films.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "locations"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "fields",
+                  "value": "<string>",
+                  "description": "Comma-separated list of fields to include in the response. When omitted, all fields are returned."
+                },
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "50",
+                  "description": "Number of results to return. Default is 50; maximum is 250."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "9bf246da-278d-404b-9c5c-faec146793b3",
+              "name": "An array of locations.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "locations"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "fields",
+                      "value": "title,director,release_date"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "50"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"id\": \"11014596-71b0-4b3e-b8c0-1c4b15f28b9a\",\n    \"name\": \"Irontown\",\n    \"climate\": \"Continental\",\n    \"terrain\": \"Mountain\",\n    \"surface_water\": \"40\",\n    \"residents\": [\n      \"https://LWqsSaYFyxgMtfycRhpaZ.qxgvpc6-nuQpTjDL4nRhMC.-OijagRQXCVFKgm+2I1MwxfYB2Ssn9A\",\n      \"http://jUjUsPWzfEVuUDAIyVTwYmMTzpZalTAG.vqE9UcQ586r2bCd97iWJiNup,M0wJTPLu2GkD+FYIJH0ldbCwUe\"\n    ],\n    \"films\": [\n      \"http://nB.tyddf+t0yjoTYoxEoeELrdFn9XgHeyyArI4ZIDlO4qd3Ny\",\n      \"http://ayWoZXh.hmhsf\"\n    ],\n    \"url\": \"https://IaaJWAqvWbWSdzuFhDvl.ppvjRmmPH82+hndL7SH2FOupNlwC5,+tYZb6nU7\"\n  },\n  {\n    \"id\": \"11014596-71b0-4b3e-b8c0-1c4b15f28b9a\",\n    \"name\": \"Irontown\",\n    \"climate\": \"Continental\",\n    \"terrain\": \"Mountain\",\n    \"surface_water\": \"40\",\n    \"residents\": [\n      \"https://rnuBEqiSK.csxyOMC0xCJxlEa0jEx.jguvu5VjVGTPgG2JKSuX0B\",\n      \"http://OmcywdNqhDlTWANFSULqnYjIa.dshyYEXi,XoUkqH\"\n    ],\n    \"films\": [\n      \"https://BMARacCRhmMVCSaHIdYWBWyglzuXV.dujCidpfhGD8hhyEbLn0itOOXcABz,r-A.gkmduwBwfewmy\",\n      \"http://YPCIR.daVbKPhWooCwyt3LuAFphqT7pH-wWIQ0HZUrAtsU\"\n    ],\n    \"url\": \"https://iKwQMO.rqjT9YXJrP,cnRKi0Urf0ROgCApoCEdh8uuKBD.EiOPJ5XhB8DSKIIrs5mydqffx0LI\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "2a875587-2b66-4466-bbe7-68aea37426c2",
+              "name": "Bad request — the query parameters or path identifier could not be parsed.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "locations"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "fields",
+                      "value": "title,director,release_date"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "50"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 6329,\n  \"message\": \"string\",\n  \"fields\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "85b5efcd-9748-4f63-9808-b79914ab4761",
+              "name": "Not found — no resource matches the supplied identifier.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "locations"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "fields",
+                      "value": "title,director,release_date"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "50"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 6329,\n  \"message\": \"string\",\n  \"fields\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "ed65954c-1e7a-4ec4-bf48-435ba032341c",
+          "name": "Get Location By Id",
+          "request": {
+            "name": "Get Location By Id",
+            "description": {
+              "content": "Return a single location identified by its UUID.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "locations",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "fields",
+                  "value": "<string>",
+                  "description": "Comma-separated list of fields to include in the response. When omitted, all fields are returned."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "id",
+                  "description": "(Required) The UUID of the location."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "d6d0dc1b-edb1-473a-b086-11655d764409",
+              "name": "A single location resource.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "locations",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "fields",
+                      "value": "title,director,release_date"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "id",
+                      "description": "(Required) The UUID of the location."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"11014596-71b0-4b3e-b8c0-1c4b15f28b9a\",\n  \"name\": \"Irontown\",\n  \"climate\": \"Continental\",\n  \"terrain\": \"Mountain\",\n  \"surface_water\": \"40\",\n  \"residents\": [\n    \"http://uFBqLRCGFeLRkSHblaFpfH.mlMJAgsoJTWGfozTD-QMXGzMNZH00zhGMAGgVR8cwn5xdAx\",\n    \"https://RqcDcajDqtHxJRZwBNmMIvIYUyvJuwrk.ygipBEsoBs5p+jPZahFfumsWfsZB\"\n  ],\n  \"films\": [\n    \"https://RQGCxiTEcJS.xbvdxCepD.4bt,DTPxxUfQnsFx9SWUHB0swKPS9eeGPkTAdgt.M\",\n    \"https://kpRfCZ.mdqcbpCtgbY7PZgOFL9gHxkpbmFnPoIVmj,dw\"\n  ],\n  \"url\": \"https://UxBPeaUHTWKHDuAmEqDvbYCwBGAVs.rxjlwp,y7CDb,w09OLkhmln+PNV\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "b3296ac9-fcb5-4368-bcf7-cf3652d0bdb7",
+              "name": "Bad request — the query parameters or path identifier could not be parsed.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "locations",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "fields",
+                      "value": "title,director,release_date"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "id",
+                      "description": "(Required) The UUID of the location."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 6329,\n  \"message\": \"string\",\n  \"fields\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "7babdba9-ee3f-4af5-8176-3d8b906e8804",
+              "name": "Not found — no resource matches the supplied identifier.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "locations",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "fields",
+                      "value": "title,director,release_date"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "id",
+                      "description": "(Required) The UUID of the location."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 6329,\n  \"message\": \"string\",\n  \"fields\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://ghibliapi.vercel.app",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "2fffc89c-b489-40cb-b738-7898df849817",
+    "name": "Studio Ghibli Films Locations API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Studio Ghibli API catalogs the people, places, and things found in the worlds of Studio Ghibli. It is an unofficial, fan-made, community-built REST API that exposes five resource collections: films, people, locations, species, and vehicles. Resources are returned as JSON and cross-link to each other through their canonical URLs, so consumers can traverse the graph (e.g. fetch a film, then its people, then their species) without authentication.\n\nThe original API was hosted at `ghibliapi.herokuapp.com`; after Heroku's free tier ended in November 2022 the canonical instance was archived and moved to `ghibliapi.vercel.app`. Source: https://github.com/janaipakos/ghibliapi (MIT, archived 2022-12-02).\n\n\nContact Support:\n Name: Studio Ghibli API (community-maintained)",
+      "type": "text/plain"
+    }
+  }
+}

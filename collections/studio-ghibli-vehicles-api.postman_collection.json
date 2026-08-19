@@ -1,0 +1,410 @@
+{
+  "item": [
+    {
+      "id": "390d250c-f9d6-4cd3-bdc7-335da03fc40a",
+      "name": "Vehicles",
+      "description": {
+        "content": "Vehicles featured in Studio Ghibli films.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "7d8de018-a4eb-40b2-b2d2-c45f5e2b165a",
+          "name": "List Vehicles",
+          "request": {
+            "name": "List Vehicles",
+            "description": {
+              "content": "Return all the vehicles that have been used in the Studio Ghibli films.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "vehicles"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "fields",
+                  "value": "<string>",
+                  "description": "Comma-separated list of fields to include in the response. When omitted, all fields are returned."
+                },
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "50",
+                  "description": "Number of results to return. Default is 50; maximum is 250."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "fd288fc4-776b-4f83-8ddd-fdf2e32917cb",
+              "name": "An array of vehicles.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "vehicles"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "fields",
+                      "value": "title,director,release_date"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "50"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"id\": \"4e09b023-f650-4747-9ab9-eacf14540cfb\",\n    \"name\": \"Air Destroyer Goliath\",\n    \"description\": \"string\",\n    \"vehicle_class\": \"Airship\",\n    \"length\": \"1,000\",\n    \"pilot\": \"http://alxvsbGVvhoywMzIomdPFxUPiZigt.ppopZZ92rzZaACDTrljLibdEe0fIXtma9Rb\",\n    \"films\": [\n      \"http://P.gauxqo2b\",\n      \"http://xeJwtqtRWBlSHqRqUyZkZBWeKxsXzkxo.gareFAhJoEP.mrFwYS\"\n    ],\n    \"url\": \"https://gAucOSSPFZ.nrtwpewgeMGKTQUS1bC\"\n  },\n  {\n    \"id\": \"4e09b023-f650-4747-9ab9-eacf14540cfb\",\n    \"name\": \"Air Destroyer Goliath\",\n    \"description\": \"string\",\n    \"vehicle_class\": \"Airship\",\n    \"length\": \"1,000\",\n    \"pilot\": \"http://UaVBzDsM.chkCdLVkWkuyvCaPu5brbEgMcR6iTD.tfQFBSIMVSQ9E7i3\",\n    \"films\": [\n      \"https://qujCjZvXJeiedLk.mbeBDO+wMIgsVxE1T2ZvvBtwYalg4I7H\",\n      \"http://GqGqRbkaHZwjgQAqnYBpIKTMKrFXhn.rjurJHXxIg00MTbvRbvJtspoOsGJlQ1MCqO,POrd9KMUsPXf7c-immg\"\n    ],\n    \"url\": \"http://DvnNGMcuWgVdzoUHbeL.rzroonhiumGhcpKv,BNgdFAnijscwQZqU2Us5K8udO3gJmoFzo95Ox3MZKqM3hEKV-tiZY\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "6ac87297-038d-424d-a2ed-418c6ca5da86",
+              "name": "Bad request — the query parameters or path identifier could not be parsed.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "vehicles"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "fields",
+                      "value": "title,director,release_date"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "50"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 273,\n  \"message\": \"string\",\n  \"fields\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "119f1794-ce1d-49f4-bc7f-422f80079fa5",
+              "name": "Not found — no resource matches the supplied identifier.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "vehicles"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "fields",
+                      "value": "title,director,release_date"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "50"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 273,\n  \"message\": \"string\",\n  \"fields\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "045d8fcd-06b8-46de-a99d-011df8945cc8",
+          "name": "Get Vehicle By Id",
+          "request": {
+            "name": "Get Vehicle By Id",
+            "description": {
+              "content": "Return a single vehicle identified by its UUID.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "vehicles",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "fields",
+                  "value": "<string>",
+                  "description": "Comma-separated list of fields to include in the response. When omitted, all fields are returned."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "id",
+                  "description": "(Required) The UUID of the vehicle."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "ca4c6791-36e5-4d6e-85c0-179a3b880e32",
+              "name": "A single vehicle resource.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "vehicles",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "fields",
+                      "value": "title,director,release_date"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "id",
+                      "description": "(Required) The UUID of the vehicle."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"4e09b023-f650-4747-9ab9-eacf14540cfb\",\n  \"name\": \"Air Destroyer Goliath\",\n  \"description\": \"string\",\n  \"vehicle_class\": \"Airship\",\n  \"length\": \"1,000\",\n  \"pilot\": \"https://uPrRiANdmgRH.hafktLbIMv2zedzizTMriuH4-Z5uqiJvz+83pbIB1s3nyAl-0WHGoiy-LkbXe9m3\",\n  \"films\": [\n    \"https://SzSirpXjSO.tdjau1RkNUKLyS36GSUknlGI,unVJ5oSIphO4jnLs4RAGG3MxVC8\",\n    \"http://J.poibPdfs,EsENS,-COEzlznj5Vk5i1q,\"\n  ],\n  \"url\": \"https://oSFqlPfEzjDAwmrgOw.ztxRgKqCBwGd5gYa4kj-ZqJ5ip.JX,k,26E9.FAGcnxc\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "52994403-2098-4b2f-b786-8f86289cdb3f",
+              "name": "Bad request — the query parameters or path identifier could not be parsed.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "vehicles",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "fields",
+                      "value": "title,director,release_date"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "id",
+                      "description": "(Required) The UUID of the vehicle."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 273,\n  \"message\": \"string\",\n  \"fields\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "9ea3a5b6-cd61-4a06-8a30-5103f39dbe7b",
+              "name": "Not found — no resource matches the supplied identifier.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "vehicles",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "fields",
+                      "value": "title,director,release_date"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "id",
+                      "description": "(Required) The UUID of the vehicle."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 273,\n  \"message\": \"string\",\n  \"fields\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://ghibliapi.vercel.app",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "c39fe26d-fb7e-4d63-ba09-d7fa32665c32",
+    "name": "Studio Ghibli Films Vehicles API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Studio Ghibli API catalogs the people, places, and things found in the worlds of Studio Ghibli. It is an unofficial, fan-made, community-built REST API that exposes five resource collections: films, people, locations, species, and vehicles. Resources are returned as JSON and cross-link to each other through their canonical URLs, so consumers can traverse the graph (e.g. fetch a film, then its people, then their species) without authentication.\n\nThe original API was hosted at `ghibliapi.herokuapp.com`; after Heroku's free tier ended in November 2022 the canonical instance was archived and moved to `ghibliapi.vercel.app`. Source: https://github.com/janaipakos/ghibliapi (MIT, archived 2022-12-02).\n\n\nContact Support:\n Name: Studio Ghibli API (community-maintained)",
+      "type": "text/plain"
+    }
+  }
+}

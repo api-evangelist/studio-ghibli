@@ -1,0 +1,410 @@
+{
+  "item": [
+    {
+      "id": "4f01cf6f-e2ee-42f6-9b2c-c3bccdc7c7b3",
+      "name": "Species",
+      "description": {
+        "content": "Species classifications of characters appearing in Studio Ghibli films.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "ef36d81b-d503-40d5-bc06-3ab3cd53a482",
+          "name": "List Species",
+          "request": {
+            "name": "List Species",
+            "description": {
+              "content": "Return all the species (human and non-human) that appear in the Studio Ghibli films.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "species"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "fields",
+                  "value": "<string>",
+                  "description": "Comma-separated list of fields to include in the response. When omitted, all fields are returned."
+                },
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "50",
+                  "description": "Number of results to return. Default is 50; maximum is 250."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "ad32e24e-e546-4f9c-914e-570053101ee1",
+              "name": "An array of species.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "species"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "fields",
+                      "value": "title,director,release_date"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "50"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"id\": \"af3910a6-429f-4c74-9ad5-dfe1c4aa04f2\",\n    \"name\": \"Human\",\n    \"classification\": \"Mammal\",\n    \"eye_colors\": \"Black, Blue, Brown, Grey, Green, Hazel\",\n    \"hair_colors\": \"Black, Blonde, Brown, Grey, White\",\n    \"people\": [\n      \"https://MfDKXsfmmKEAFQaFiZHTkdyBBoh.rfhTHM0QRyMoNka2QnJq+AWmZ\",\n      \"http://EkOFYwavKySgJ.zzMjFqSTSYprLZjx0LKaTbtdTwfk,lAEJiDBPRw\"\n    ],\n    \"films\": [\n      \"https://h.wiaHYhbkXOd9iYOl4CMHilTeiCDtU9ul28MxfGXq95hIBHJIlEYFg\",\n      \"https://UQtHHoR.ustJnrvs6V51uzK4.Jj.VKVSoKGmLcYhJzm3u1dFaF\"\n    ],\n    \"url\": \"https://RhcbrbxaTRnO.tsdPUYgUwjjDvVCbBves8c8z8FD2hWzkfZANWWjverH05ufuFRZIKRtsELQJ\"\n  },\n  {\n    \"id\": \"af3910a6-429f-4c74-9ad5-dfe1c4aa04f2\",\n    \"name\": \"Human\",\n    \"classification\": \"Mammal\",\n    \"eye_colors\": \"Black, Blue, Brown, Grey, Green, Hazel\",\n    \"hair_colors\": \"Black, Blonde, Brown, Grey, White\",\n    \"people\": [\n      \"http://nVwJeFPZBopAHeqBioZPNmThc.lca2cfD16E2drn13ZEMYl-3Bl\",\n      \"https://YCIdqUtfTNmoiadR.evzl0xzO.OYgT.FMYdd9qAF8K6m210C5yb6JjHLTBcmi\"\n    ],\n    \"films\": [\n      \"https://qQaFZKxTrGaUYEjixv.qrxtB.ZBwH0b28AA7LDDvTWOxqSoVQB3AyaghDhQZ1Lss8e13a2DJNd5l4ADGu\",\n      \"http://RSpbtKwudQBAlDLcWvETGQNcTHq.kzsrXVBfAFDUPORSJY9EuHMQ6CVS9Kk4sbPntUpgvb1gQJz7+\"\n    ],\n    \"url\": \"https://LYOKFCtscYEgeRxOyPivWPtIHPorjUQ.swhqevw.\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "8b471f00-8748-4d15-a16b-c178f6a8c52a",
+              "name": "Bad request — the query parameters or path identifier could not be parsed.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "species"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "fields",
+                      "value": "title,director,release_date"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "50"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 479,\n  \"message\": \"string\",\n  \"fields\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "6bb359e5-b807-4f55-ad6d-1ab46c83fb72",
+              "name": "Not found — no resource matches the supplied identifier.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "species"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "fields",
+                      "value": "title,director,release_date"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "50"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 479,\n  \"message\": \"string\",\n  \"fields\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "8c824b9d-b0cd-422d-a3d4-9e854d3872a5",
+          "name": "Get Species By Id",
+          "request": {
+            "name": "Get Species By Id",
+            "description": {
+              "content": "Return a single species identified by its UUID.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "species",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "fields",
+                  "value": "<string>",
+                  "description": "Comma-separated list of fields to include in the response. When omitted, all fields are returned."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "id",
+                  "description": "(Required) The UUID of the species."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "664bbea1-44d1-4c57-b707-958edc2e501f",
+              "name": "A single species resource.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "species",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "fields",
+                      "value": "title,director,release_date"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "id",
+                      "description": "(Required) The UUID of the species."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"af3910a6-429f-4c74-9ad5-dfe1c4aa04f2\",\n  \"name\": \"Human\",\n  \"classification\": \"Mammal\",\n  \"eye_colors\": \"Black, Blue, Brown, Grey, Green, Hazel\",\n  \"hair_colors\": \"Black, Blonde, Brown, Grey, White\",\n  \"people\": [\n    \"http://yeCIhIRbzRbEjuozE.lnrG3WDH9IG+M\",\n    \"https://ImWdcCyMNCwUmibNoBMnLYdsvYRgzRG.zpFJsUx6jXNRoQJeFM9jxlPanCA\"\n  ],\n  \"films\": [\n    \"https://hNCzWsL.bepbhX9B,0rO6uBlkwfoGapbfirMRTm2b+7EgdwLfLi0uPmxKkdfvJgE\",\n    \"https://ZIp.ubrF.xsA0cWLV2VqIrS7ng2.rLFd51XAZs2NCMHzeGJOkxDs03Sm+75sjBT7UEMjX9T0AVRPkPWo9yhOSc4sljV\"\n  ],\n  \"url\": \"http://lvdnCjbYIelitEViECfheJZK.yqal9P90\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "a5423562-e96c-4943-9e03-b75c239e864e",
+              "name": "Bad request — the query parameters or path identifier could not be parsed.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "species",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "fields",
+                      "value": "title,director,release_date"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "id",
+                      "description": "(Required) The UUID of the species."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 479,\n  \"message\": \"string\",\n  \"fields\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "5c08eb3c-00fe-414a-84e8-fb769df9f542",
+              "name": "Not found — no resource matches the supplied identifier.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "species",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "fields",
+                      "value": "title,director,release_date"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "id",
+                      "description": "(Required) The UUID of the species."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 479,\n  \"message\": \"string\",\n  \"fields\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://ghibliapi.vercel.app",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "3d919cd0-9834-4d22-b179-6411d8d0ca63",
+    "name": "Studio Ghibli Films Species API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Studio Ghibli API catalogs the people, places, and things found in the worlds of Studio Ghibli. It is an unofficial, fan-made, community-built REST API that exposes five resource collections: films, people, locations, species, and vehicles. Resources are returned as JSON and cross-link to each other through their canonical URLs, so consumers can traverse the graph (e.g. fetch a film, then its people, then their species) without authentication.\n\nThe original API was hosted at `ghibliapi.herokuapp.com`; after Heroku's free tier ended in November 2022 the canonical instance was archived and moved to `ghibliapi.vercel.app`. Source: https://github.com/janaipakos/ghibliapi (MIT, archived 2022-12-02).\n\n\nContact Support:\n Name: Studio Ghibli API (community-maintained)",
+      "type": "text/plain"
+    }
+  }
+}
