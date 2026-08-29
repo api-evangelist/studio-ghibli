@@ -1,4 +1,17 @@
 aid: studio-ghibli
+deliveryModel:
+  model: unknown
+  open_source: unknown
+  commercial: true
+  callable_host: true
+  label: Delivery model not determined — needs a product licence on record
+  confidence: low
+  source:
+  - openapi
+  - pricing
+  - repository-unlicensed
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: free
   onboarding: open
@@ -353,6 +366,10 @@ apis:
   - type: GraphQL
     url: graphql/studio-ghibli-graphql.md
 common:
+- type: IssueTracker
+  url: https://github.com/janaipakos/ghibliapi/issues
+- type: ContributionGuide
+  url: https://github.com/janaipakos/ghibliapi/blob/master/CONTRIBUTING.md
 - type: AgenticAccess
   url: agentic-access/studio-ghibli-agentic-access.yml
 - type: DomainSecurity
