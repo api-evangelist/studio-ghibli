@@ -1,4 +1,4 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
   title: Studio Ghibli Films People API
   description: 'The Studio Ghibli API catalogs the people, places, and things found in the worlds of Studio Ghibli. It is an unofficial, fan-made, community-built REST API that exposes five resource collections: films, people, locations, species, and vehicles. Resources are returned as JSON and cross-link to each other through their canonical URLs, so consumers can traverse the graph (e.g. fetch a film, then its people, then their species) without authentication.
@@ -77,15 +77,45 @@ paths:
         delay: 0
         dispatcher: FALLBACK
 components:
+  parameters:
+    Fields:
+      name: fields
+      in: query
+      description: Comma-separated list of fields to include in the response. When omitted, all fields are returned.
+      required: false
+      schema:
+        type: string
+      example: title,director,release_date
+    Limit:
+      name: limit
+      in: query
+      description: Number of results to return. Default is 50; maximum is 250.
+      required: false
+      schema:
+        type: integer
+        format: int32
+        default: 50
+        minimum: 1
+        maximum: 250
+      example: 50
+    PersonId:
+      name: id
+      in: path
+      description: The UUID of the person.
+      required: true
+      schema:
+        type: string
+        format: uuid
+      example: 267649ac-fb1b-11eb-9a03-0242ac130003
   responses:
-    NotFound:
-      description: Not found — no resource matches the supplied identifier.
+    BadRequest:
+      description: Bad request — the query parameters or path identifier could not be parsed.
       content:
         application/json:
           schema:
             $ref: '#/components/schemas/Error'
-    BadRequest:
-      description: Bad request — the query parameters or path identifier could not be parsed.
+    NotFound:
+      description: Not found — no resource matches the supplied identifier.
       content:
         application/json:
           schema:
@@ -150,33 +180,3 @@ components:
           type: string
           format: uri
           description: Canonical URL of the person resource.
-  parameters:
-    PersonId:
-      name: id
-      in: path
-      description: The UUID of the person.
-      required: true
-      schema:
-        type: string
-        format: uuid
-      example: 267649ac-fb1b-11eb-9a03-0242ac130003
-    Fields:
-      name: fields
-      in: query
-      description: Comma-separated list of fields to include in the response. When omitted, all fields are returned.
-      required: false
-      schema:
-        type: string
-      example: title,director,release_date
-    Limit:
-      name: limit
-      in: query
-      description: Number of results to return. Default is 50; maximum is 250.
-      required: false
-      schema:
-        type: integer
-        format: int32
-        default: 50
-        minimum: 1
-        maximum: 250
-      example: 50
