@@ -43,14 +43,14 @@ x-tier-reason: bulk-registered-from-public-apis
 tags:
 - Anime
 - Studio Ghibli
-- Film
+- Films
 - Characters
 - Locations
 - Species
 - Vehicles
 - Public APIs
 - Open-Source
-- Read Only
+- Read-Only
 tags_raw:
 - Anime
 - Studio Ghibli
@@ -69,7 +69,7 @@ apis:
   humanURL: https://ghibliapi.vercel.app
   baseURL: https://ghibliapi.vercel.app
   tags:
-  - Film
+  - Films
   tags_raw:
   - Films
   properties:
