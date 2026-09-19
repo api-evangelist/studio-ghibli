@@ -45,7 +45,7 @@ tags:
 - Studio Ghibli
 - Film
 - Characters
-- Locations
+- Location
 - Species
 - Vehicles
 - Public APIs
@@ -131,6 +131,8 @@ apis:
   humanURL: https://ghibliapi.vercel.app
   baseURL: https://ghibliapi.vercel.app
   tags:
+  - Location
+  tags_raw:
   - Locations
   properties:
   - type: OpenAPI
