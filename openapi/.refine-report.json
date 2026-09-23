@@ -1,11 +1,7 @@
 {
   "provider": "studio-ghibli",
   "sources": [
-    "studio-ghibli-films-api-openapi.yml",
-    "studio-ghibli-locations-api-openapi.yml",
-    "studio-ghibli-people-api-openapi.yml",
-    "studio-ghibli-species-api-openapi.yml",
-    "studio-ghibli-vehicles-api-openapi.yml"
+    "_ae-authored/studio-ghibli-openapi.yml"
   ],
   "outputs": [
     "studio-ghibli-films-api-openapi.yml",
@@ -18,12 +14,15 @@
   "errors": [],
   "warnings": [],
   "notes": [
-    "studio-ghibli-films-api-openapi.yml: upgraded openapi 3.0.3 -> OpenAPI 3.2.0",
-    "studio-ghibli-locations-api-openapi.yml: upgraded openapi 3.0.3 -> OpenAPI 3.2.0",
-    "studio-ghibli-people-api-openapi.yml: upgraded openapi 3.0.3 -> OpenAPI 3.2.0",
-    "studio-ghibli-species-api-openapi.yml: upgraded openapi 3.0.3 -> OpenAPI 3.2.0",
-    "studio-ghibli-vehicles-api-openapi.yml: upgraded openapi 3.0.3 -> OpenAPI 3.2.0",
+    "sourced from openapi/_original/ (0 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "studio-ghibli-openapi.yml: upgraded openapi 3.0.3 -> OpenAPI 3.2.0",
     "apis.yml register: already-registered"
   ],
-  "skipped": []
+  "skipped": [
+    "studio-ghibli-films-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "studio-ghibli-locations-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "studio-ghibli-people-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "studio-ghibli-species-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "studio-ghibli-vehicles-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }

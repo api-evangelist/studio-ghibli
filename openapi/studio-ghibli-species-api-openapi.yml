@@ -1,12 +1,7 @@
 openapi: 3.2.0
 info:
-  title: Studio Ghibli Films Species API
-  description: 'The Studio Ghibli API catalogs the people, places, and things found in the worlds of Studio Ghibli. It is an unofficial, fan-made, community-built REST API that exposes five resource collections: films, people, locations, species, and vehicles. Resources are returned as JSON and cross-link to each other through their canonical URLs, so consumers can traverse the graph (e.g. fetch a film, then its people, then their species) without authentication.
-
-
-    The original API was hosted at `ghibliapi.herokuapp.com`; after Heroku''s free tier ended in November 2022 the canonical instance was archived and moved to `ghibliapi.vercel.app`. Source: https://github.com/janaipakos/ghibliapi (MIT, archived 2022-12-02).
-
-    '
+  title: Studio Ghibli Species API
+  description: The Studio Ghibli API catalogs the people, places, and things found in the worlds of Studio Ghibli.
   version: 1.0.1
   license:
     name: MIT
@@ -77,7 +72,32 @@ paths:
         delay: 0
         dispatcher: FALLBACK
 components:
+  responses:
+    BadRequest:
+      description: Bad request — the query parameters or path identifier could not be parsed.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+    NotFound:
+      description: Not found — no resource matches the supplied identifier.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
   parameters:
+    Limit:
+      name: limit
+      in: query
+      description: Number of results to return. Default is 50; maximum is 250.
+      required: false
+      schema:
+        type: integer
+        format: int32
+        default: 50
+        minimum: 1
+        maximum: 250
+      example: 50
     Fields:
       name: fields
       in: query
@@ -95,19 +115,20 @@ components:
         type: string
         format: uuid
       example: af3910a6-429f-4c74-9ad5-dfe1c4aa04f2
-    Limit:
-      name: limit
-      in: query
-      description: Number of results to return. Default is 50; maximum is 250.
-      required: false
-      schema:
-        type: integer
-        format: int32
-        default: 50
-        minimum: 1
-        maximum: 250
-      example: 50
   schemas:
+    Error:
+      type: object
+      description: Error response payload.
+      properties:
+        code:
+          type: integer
+          description: HTTP status code.
+        message:
+          type: string
+          description: Human-readable error message.
+        fields:
+          type: string
+          description: Optional list of fields involved in the error.
     Species:
       type: object
       description: A species classification of a character or creature in the Studio Ghibli films.
@@ -152,29 +173,3 @@ components:
           type: string
           format: uri
           description: Canonical URL of the species resource.
-    Error:
-      type: object
-      description: Error response payload.
-      properties:
-        code:
-          type: integer
-          description: HTTP status code.
-        message:
-          type: string
-          description: Human-readable error message.
-        fields:
-          type: string
-          description: Optional list of fields involved in the error.
-  responses:
-    BadRequest:
-      description: Bad request — the query parameters or path identifier could not be parsed.
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Error'
-    NotFound:
-      description: Not found — no resource matches the supplied identifier.
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Error'

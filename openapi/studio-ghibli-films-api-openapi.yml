@@ -1,12 +1,7 @@
 openapi: 3.2.0
 info:
   title: Studio Ghibli Films API
-  description: 'The Studio Ghibli API catalogs the people, places, and things found in the worlds of Studio Ghibli. It is an unofficial, fan-made, community-built REST API that exposes five resource collections: films, people, locations, species, and vehicles. Resources are returned as JSON and cross-link to each other through their canonical URLs, so consumers can traverse the graph (e.g. fetch a film, then its people, then their species) without authentication.
-
-
-    The original API was hosted at `ghibliapi.herokuapp.com`; after Heroku''s free tier ended in November 2022 the canonical instance was archived and moved to `ghibliapi.vercel.app`. Source: https://github.com/janaipakos/ghibliapi (MIT, archived 2022-12-02).
-
-    '
+  description: The Studio Ghibli API catalogs the people, places, and things found in the worlds of Studio Ghibli.
   version: 1.0.1
   license:
     name: MIT
@@ -77,15 +72,20 @@ paths:
         delay: 0
         dispatcher: FALLBACK
 components:
+  responses:
+    BadRequest:
+      description: Bad request — the query parameters or path identifier could not be parsed.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+    NotFound:
+      description: Not found — no resource matches the supplied identifier.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
   parameters:
-    Fields:
-      name: fields
-      in: query
-      description: Comma-separated list of fields to include in the response. When omitted, all fields are returned.
-      required: false
-      schema:
-        type: string
-      example: title,director,release_date
     Limit:
       name: limit
       in: query
@@ -107,33 +107,15 @@ components:
         type: string
         format: uuid
       example: 58611129-2dbc-4a81-a72f-77ddfc1b1b49
-  responses:
-    BadRequest:
-      description: Bad request — the query parameters or path identifier could not be parsed.
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Error'
-    NotFound:
-      description: Not found — no resource matches the supplied identifier.
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Error'
+    Fields:
+      name: fields
+      in: query
+      description: Comma-separated list of fields to include in the response. When omitted, all fields are returned.
+      required: false
+      schema:
+        type: string
+      example: title,director,release_date
   schemas:
-    Error:
-      type: object
-      description: Error response payload.
-      properties:
-        code:
-          type: integer
-          description: HTTP status code.
-        message:
-          type: string
-          description: Human-readable error message.
-        fields:
-          type: string
-          description: Optional list of fields involved in the error.
     Film:
       type: object
       description: A Studio Ghibli theatrical film.
@@ -221,3 +203,16 @@ components:
           type: string
           format: uri
           description: Canonical URL of the film resource.
+    Error:
+      type: object
+      description: Error response payload.
+      properties:
+        code:
+          type: integer
+          description: HTTP status code.
+        message:
+          type: string
+          description: Human-readable error message.
+        fields:
+          type: string
+          description: Optional list of fields involved in the error.
