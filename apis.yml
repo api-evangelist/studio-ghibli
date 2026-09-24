@@ -49,7 +49,7 @@ tags:
 - Species
 - Vehicles
 - Public APIs
-- Open-Source
+- Open Source
 - Read Only
 tags_raw:
 - Anime
@@ -62,6 +62,7 @@ tags_raw:
 - Public APIs
 - Open Source
 - Read-Only
+- Open-Source
 apis:
 - aid: studio-ghibli:studio-ghibli-films-api
   name: Studio Ghibli Films API
@@ -123,8 +124,6 @@ apis:
     url: rate-limits/studio-ghibli-rate-limits.yml
   - type: Authentication
     url: https://github.com/janaipakos/ghibliapi#getting-started
-  - type: GraphQL
-    url: graphql/studio-ghibli-graphql.md
 - aid: studio-ghibli:studio-ghibli-locations-api
   name: Studio Ghibli Locations API
   description: Settings and places that appear in Studio Ghibli films.
@@ -185,8 +184,6 @@ apis:
     url: rate-limits/studio-ghibli-rate-limits.yml
   - type: Authentication
     url: https://github.com/janaipakos/ghibliapi#getting-started
-  - type: GraphQL
-    url: graphql/studio-ghibli-graphql.md
 - aid: studio-ghibli:studio-ghibli-people-api
   name: Studio Ghibli People API
   description: Characters that appear in Studio Ghibli films.
@@ -245,8 +242,6 @@ apis:
     url: rate-limits/studio-ghibli-rate-limits.yml
   - type: Authentication
     url: https://github.com/janaipakos/ghibliapi#getting-started
-  - type: GraphQL
-    url: graphql/studio-ghibli-graphql.md
 - aid: studio-ghibli:studio-ghibli-species-api
   name: Studio Ghibli Species API
   description: Species classifications of characters appearing in Studio Ghibli films.
@@ -305,8 +300,6 @@ apis:
     url: rate-limits/studio-ghibli-rate-limits.yml
   - type: Authentication
     url: https://github.com/janaipakos/ghibliapi#getting-started
-  - type: GraphQL
-    url: graphql/studio-ghibli-graphql.md
 - aid: studio-ghibli:studio-ghibli-vehicles-api
   name: Studio Ghibli Vehicles API
   description: Vehicles featured in Studio Ghibli films.
@@ -365,8 +358,6 @@ apis:
     url: rate-limits/studio-ghibli-rate-limits.yml
   - type: Authentication
     url: https://github.com/janaipakos/ghibliapi#getting-started
-  - type: GraphQL
-    url: graphql/studio-ghibli-graphql.md
 common:
 - type: IssueTracker
   url: https://github.com/janaipakos/ghibliapi/issues
