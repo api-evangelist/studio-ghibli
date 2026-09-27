@@ -72,20 +72,16 @@ paths:
         delay: 0
         dispatcher: FALLBACK
 components:
-  responses:
-    BadRequest:
-      description: Bad request — the query parameters or path identifier could not be parsed.
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Error'
-    NotFound:
-      description: Not found — no resource matches the supplied identifier.
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Error'
   parameters:
+    SpeciesId:
+      name: id
+      in: path
+      description: The UUID of the species.
+      required: true
+      schema:
+        type: string
+        format: uuid
+      example: af3910a6-429f-4c74-9ad5-dfe1c4aa04f2
     Limit:
       name: limit
       in: query
@@ -106,15 +102,6 @@ components:
       schema:
         type: string
       example: title,director,release_date
-    SpeciesId:
-      name: id
-      in: path
-      description: The UUID of the species.
-      required: true
-      schema:
-        type: string
-        format: uuid
-      example: af3910a6-429f-4c74-9ad5-dfe1c4aa04f2
   schemas:
     Error:
       type: object
@@ -173,3 +160,16 @@ components:
           type: string
           format: uri
           description: Canonical URL of the species resource.
+  responses:
+    NotFound:
+      description: Not found — no resource matches the supplied identifier.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+    BadRequest:
+      description: Bad request — the query parameters or path identifier could not be parsed.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'

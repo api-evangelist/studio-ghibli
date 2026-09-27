@@ -1,16 +1,19 @@
 aid: studio-ghibli
 deliveryModel:
-  model: unknown
+  model: saas
+  license_evidence:
+    not_product:
+    - janaipakos/ghibliapi
   open_source: unknown
   commercial: true
   callable_host: true
-  label: Delivery model not determined — needs a product licence on record
+  label: Hosted service · you call their endpoint
   confidence: low
   source:
   - openapi
   - pricing
-  - repository-unlicensed
-  generated: '2026-08-28'
+  - repository-not-product
+  generated: '2026-09-25'
   method: derived
 accessModel:
   pricing: free
@@ -68,7 +71,7 @@ apis:
   name: Studio Ghibli Films API
   description: Studio Ghibli theatrical films.
   humanURL: https://ghibliapi.vercel.app
-  baseURL: https://ghibliapi.vercel.app
+  baseURL: https://ghibliapi.herokuapp.com
   tags:
   - Film
   tags_raw:
@@ -128,7 +131,7 @@ apis:
   name: Studio Ghibli Locations API
   description: Settings and places that appear in Studio Ghibli films.
   humanURL: https://ghibliapi.vercel.app
-  baseURL: https://ghibliapi.vercel.app
+  baseURL: https://ghibliapi.herokuapp.com
   tags:
   - Location
   tags_raw:
@@ -188,7 +191,7 @@ apis:
   name: Studio Ghibli People API
   description: Characters that appear in Studio Ghibli films.
   humanURL: https://ghibliapi.vercel.app
-  baseURL: https://ghibliapi.vercel.app
+  baseURL: https://ghibliapi.herokuapp.com
   tags:
   - People
   properties:
@@ -246,7 +249,7 @@ apis:
   name: Studio Ghibli Species API
   description: Species classifications of characters appearing in Studio Ghibli films.
   humanURL: https://ghibliapi.vercel.app
-  baseURL: https://ghibliapi.vercel.app
+  baseURL: https://ghibliapi.herokuapp.com
   tags:
   - Species
   properties:
@@ -304,7 +307,7 @@ apis:
   name: Studio Ghibli Vehicles API
   description: Vehicles featured in Studio Ghibli films.
   humanURL: https://ghibliapi.vercel.app
-  baseURL: https://ghibliapi.vercel.app
+  baseURL: https://ghibliapi.herokuapp.com
   tags:
   - Vehicles
   properties:

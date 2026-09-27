@@ -72,32 +72,7 @@ paths:
         delay: 0
         dispatcher: FALLBACK
 components:
-  responses:
-    BadRequest:
-      description: Bad request — the query parameters or path identifier could not be parsed.
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Error'
-    NotFound:
-      description: Not found — no resource matches the supplied identifier.
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Error'
   parameters:
-    Limit:
-      name: limit
-      in: query
-      description: Number of results to return. Default is 50; maximum is 250.
-      required: false
-      schema:
-        type: integer
-        format: int32
-        default: 50
-        minimum: 1
-        maximum: 250
-      example: 50
     FilmId:
       name: id
       in: path
@@ -115,6 +90,18 @@ components:
       schema:
         type: string
       example: title,director,release_date
+    Limit:
+      name: limit
+      in: query
+      description: Number of results to return. Default is 50; maximum is 250.
+      required: false
+      schema:
+        type: integer
+        format: int32
+        default: 50
+        minimum: 1
+        maximum: 250
+      example: 50
   schemas:
     Film:
       type: object
@@ -216,3 +203,16 @@ components:
         fields:
           type: string
           description: Optional list of fields involved in the error.
+  responses:
+    NotFound:
+      description: Not found — no resource matches the supplied identifier.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+    BadRequest:
+      description: Bad request — the query parameters or path identifier could not be parsed.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
