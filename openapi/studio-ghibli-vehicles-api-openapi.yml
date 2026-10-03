@@ -73,6 +73,14 @@ paths:
         dispatcher: FALLBACK
 components:
   parameters:
+    Fields:
+      name: fields
+      in: query
+      description: Comma-separated list of fields to include in the response. When omitted, all fields are returned.
+      required: false
+      schema:
+        type: string
+      example: title,director,release_date
     VehicleId:
       name: id
       in: path
@@ -94,15 +102,33 @@ components:
         minimum: 1
         maximum: 250
       example: 50
-    Fields:
-      name: fields
-      in: query
-      description: Comma-separated list of fields to include in the response. When omitted, all fields are returned.
-      required: false
-      schema:
-        type: string
-      example: title,director,release_date
+  responses:
+    NotFound:
+      description: Not found — no resource matches the supplied identifier.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+    BadRequest:
+      description: Bad request — the query parameters or path identifier could not be parsed.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
   schemas:
+    Error:
+      type: object
+      description: Error response payload.
+      properties:
+        code:
+          type: integer
+          description: HTTP status code.
+        message:
+          type: string
+          description: Human-readable error message.
+        fields:
+          type: string
+          description: Optional list of fields involved in the error.
     Vehicle:
       type: object
       description: A vehicle that appears in one or more Studio Ghibli films.
@@ -144,29 +170,3 @@ components:
           type: string
           format: uri
           description: Canonical URL of the vehicle resource.
-    Error:
-      type: object
-      description: Error response payload.
-      properties:
-        code:
-          type: integer
-          description: HTTP status code.
-        message:
-          type: string
-          description: Human-readable error message.
-        fields:
-          type: string
-          description: Optional list of fields involved in the error.
-  responses:
-    NotFound:
-      description: Not found — no resource matches the supplied identifier.
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Error'
-    BadRequest:
-      description: Bad request — the query parameters or path identifier could not be parsed.
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Error'
