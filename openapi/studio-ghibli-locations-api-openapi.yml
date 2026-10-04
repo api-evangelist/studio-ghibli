@@ -72,49 +72,6 @@ paths:
         delay: 0
         dispatcher: FALLBACK
 components:
-  parameters:
-    Fields:
-      name: fields
-      in: query
-      description: Comma-separated list of fields to include in the response. When omitted, all fields are returned.
-      required: false
-      schema:
-        type: string
-      example: title,director,release_date
-    LocationId:
-      name: id
-      in: path
-      description: The UUID of the location.
-      required: true
-      schema:
-        type: string
-        format: uuid
-      example: 11014596-71b0-4b3e-b8c0-1c4b15f28b9a
-    Limit:
-      name: limit
-      in: query
-      description: Number of results to return. Default is 50; maximum is 250.
-      required: false
-      schema:
-        type: integer
-        format: int32
-        default: 50
-        minimum: 1
-        maximum: 250
-      example: 50
-  responses:
-    NotFound:
-      description: Not found — no resource matches the supplied identifier.
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Error'
-    BadRequest:
-      description: Bad request — the query parameters or path identifier could not be parsed.
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Error'
   schemas:
     Location:
       type: object
@@ -173,3 +130,46 @@ components:
         fields:
           type: string
           description: Optional list of fields involved in the error.
+  parameters:
+    Limit:
+      name: limit
+      in: query
+      description: Number of results to return. Default is 50; maximum is 250.
+      required: false
+      schema:
+        type: integer
+        format: int32
+        default: 50
+        minimum: 1
+        maximum: 250
+      example: 50
+    Fields:
+      name: fields
+      in: query
+      description: Comma-separated list of fields to include in the response. When omitted, all fields are returned.
+      required: false
+      schema:
+        type: string
+      example: title,director,release_date
+    LocationId:
+      name: id
+      in: path
+      description: The UUID of the location.
+      required: true
+      schema:
+        type: string
+        format: uuid
+      example: 11014596-71b0-4b3e-b8c0-1c4b15f28b9a
+  responses:
+    NotFound:
+      description: Not found — no resource matches the supplied identifier.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+    BadRequest:
+      description: Bad request — the query parameters or path identifier could not be parsed.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'

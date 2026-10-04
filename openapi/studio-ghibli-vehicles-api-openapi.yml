@@ -73,23 +73,6 @@ paths:
         dispatcher: FALLBACK
 components:
   parameters:
-    Fields:
-      name: fields
-      in: query
-      description: Comma-separated list of fields to include in the response. When omitted, all fields are returned.
-      required: false
-      schema:
-        type: string
-      example: title,director,release_date
-    VehicleId:
-      name: id
-      in: path
-      description: The UUID of the vehicle.
-      required: true
-      schema:
-        type: string
-        format: uuid
-      example: 4e09b023-f650-4747-9ab9-eacf14540cfb
     Limit:
       name: limit
       in: query
@@ -102,6 +85,23 @@ components:
         minimum: 1
         maximum: 250
       example: 50
+    VehicleId:
+      name: id
+      in: path
+      description: The UUID of the vehicle.
+      required: true
+      schema:
+        type: string
+        format: uuid
+      example: 4e09b023-f650-4747-9ab9-eacf14540cfb
+    Fields:
+      name: fields
+      in: query
+      description: Comma-separated list of fields to include in the response. When omitted, all fields are returned.
+      required: false
+      schema:
+        type: string
+      example: title,director,release_date
   responses:
     NotFound:
       description: Not found — no resource matches the supplied identifier.

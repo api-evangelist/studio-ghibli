@@ -73,14 +73,6 @@ paths:
         dispatcher: FALLBACK
 components:
   parameters:
-    Fields:
-      name: fields
-      in: query
-      description: Comma-separated list of fields to include in the response. When omitted, all fields are returned.
-      required: false
-      schema:
-        type: string
-      example: title,director,release_date
     FilmId:
       name: id
       in: path
@@ -102,6 +94,14 @@ components:
         minimum: 1
         maximum: 250
       example: 50
+    Fields:
+      name: fields
+      in: query
+      description: Comma-separated list of fields to include in the response. When omitted, all fields are returned.
+      required: false
+      schema:
+        type: string
+      example: title,director,release_date
   responses:
     NotFound:
       description: Not found — no resource matches the supplied identifier.

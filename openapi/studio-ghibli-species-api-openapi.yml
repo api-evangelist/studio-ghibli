@@ -82,14 +82,6 @@ components:
         type: string
         format: uuid
       example: af3910a6-429f-4c74-9ad5-dfe1c4aa04f2
-    Fields:
-      name: fields
-      in: query
-      description: Comma-separated list of fields to include in the response. When omitted, all fields are returned.
-      required: false
-      schema:
-        type: string
-      example: title,director,release_date
     Limit:
       name: limit
       in: query
@@ -102,6 +94,14 @@ components:
         minimum: 1
         maximum: 250
       example: 50
+    Fields:
+      name: fields
+      in: query
+      description: Comma-separated list of fields to include in the response. When omitted, all fields are returned.
+      required: false
+      schema:
+        type: string
+      example: title,director,release_date
   responses:
     NotFound:
       description: Not found — no resource matches the supplied identifier.
