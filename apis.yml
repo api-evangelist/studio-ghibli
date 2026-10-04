@@ -48,9 +48,7 @@ tags:
 - Studio Ghibli
 - Film
 - Characters
-- Location
 - Species
-- Vehicles
 - Public APIs
 - Open Source
 - Read Only
@@ -59,9 +57,7 @@ tags_raw:
 - Studio Ghibli
 - Films
 - Characters
-- Locations
 - Species
-- Vehicles
 - Public APIs
 - Open Source
 - Read-Only
@@ -462,3 +458,6 @@ common:
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
+x-tags-removed:
+- Location
+- Vehicles
