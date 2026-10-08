@@ -358,6 +358,10 @@ apis:
   - type: Authentication
     url: https://github.com/janaipakos/ghibliapi#getting-started
 common:
+- type: Plans
+  url: plans/studio-ghibli-plans-pricing.yml
+- type: RateLimits
+  url: rate-limits/studio-ghibli-rate-limits.yml
 - type: IssueTracker
   url: https://github.com/janaipakos/ghibliapi/issues
 - type: ContributionGuide
