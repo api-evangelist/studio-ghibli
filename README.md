@@ -1,4 +1,4 @@
-# Studio Ghibli (studio-ghibli)
+# Studio Ghibli
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -66,100 +66,170 @@
 
 Studio Ghibli API — a community-built, unofficial, fan-made, MIT-licensed REST API that catalogs the people, places, and things found in the worlds of Studio Ghibli. Five resource collections (films, people, locations, species, vehicles) cross-link via canonical URLs. No authentication, no metering, no paid tier. Source: github.com/janaipakos/ghibliapi (archived 2022-12-02); canonical instance now at ghibliapi.vercel.app.
 
-**APIs.json:** [https://ghibliapi.vercel.app](https://ghibliapi.vercel.app)
+**Areas:** Anime · Studio Ghibli · Film · Characters · Species · Public APIs · Open Source · Read Only
 
-## Tags
+## Studio Ghibli on APIs.io
 
-- Anime
-- Studio Ghibli
-- Films
-- Characters
-- Locations
-- Species
-- Vehicles
-- Public APIs
-- Open Source
-- Read-Only
+Everything profiled for Studio Ghibli is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/studio-ghibli/](https://apis.io/providers/studio-ghibli/)** — or go straight to one of the APIs or properties below.
 
-## Timestamps
+### APIs (5)
 
-- **Created:** 2026-05-28
-- **Modified:** 2026-05-29
+- [Studio Ghibli Films API](https://apis.io/apis/studio-ghibli/studio-ghibli-films-api/) — Studio Ghibli theatrical films.
+- [Studio Ghibli Locations API](https://apis.io/apis/studio-ghibli/studio-ghibli-locations-api/) — Settings and places that appear in Studio Ghibli films.
+- [Studio Ghibli People API](https://apis.io/apis/studio-ghibli/studio-ghibli-people-api/) — Characters that appear in Studio Ghibli films.
+- [Studio Ghibli Species API](https://apis.io/apis/studio-ghibli/studio-ghibli-species-api/) — Species classifications of characters appearing in Studio Ghibli films.
+- [Studio Ghibli Vehicles API](https://apis.io/apis/studio-ghibli/studio-ghibli-vehicles-api/) — Vehicles featured in Studio Ghibli films.
 
-## APIs
+### Published properties
 
-### Studio Ghibli API
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-Read-only REST API exposing five resource collections (films, people, locations, species, vehicles) that catalog the worlds of Studio Ghibli. No authentication; default page size 50, max 250; optional `fields=` projection.
+#### Agentic access (1)
 
-- **Human URL:** [https://ghibliapi.vercel.app](https://ghibliapi.vercel.app)
-- **Base URL:** `https://ghibliapi.vercel.app`
+Which operations an agent can call, which act, and which need a human in the loop.
 
-#### Tags
+- [Studio Ghibli Agentic Access](https://apis.io/agentic-access/studio-ghibli/studio-ghibli-agentic-access/)
 
-- Anime
-- Studio Ghibli
-- Films
-- Characters
-- Locations
-- Species
-- Vehicles
+#### JSON Schema (5)
 
-#### Properties
+The data models the API reads and writes.
 
-- [Documentation](https://ghibliapi.vercel.app)
-- [OpenAPI](openapi/studio-ghibli-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/studio-ghibli.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/studio-ghibli.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-- [JSON Schema](json-schema/studio-ghibli-film-schema.json) — [JSON Schema](https://json-schema.org/specification)
-- [JSON Schema](json-schema/studio-ghibli-person-schema.json) — [JSON Schema](https://json-schema.org/specification)
-- [JSON Schema](json-schema/studio-ghibli-location-schema.json) — [JSON Schema](https://json-schema.org/specification)
-- [JSON Schema](json-schema/studio-ghibli-species-schema.json) — [JSON Schema](https://json-schema.org/specification)
-- [JSON Schema](json-schema/studio-ghibli-vehicle-schema.json) — [JSON Schema](https://json-schema.org/specification)
-- [JSON Structure](json-structure/studio-ghibli-film-structure.json)
-- [JSON Structure](json-structure/studio-ghibli-person-structure.json)
-- [JSON Structure](json-structure/studio-ghibli-location-structure.json)
-- [JSON Structure](json-structure/studio-ghibli-species-structure.json)
-- [JSON Structure](json-structure/studio-ghibli-vehicle-structure.json)
-- [Example](examples/studio-ghibli-listfilms-example.json)
-- [Example](examples/studio-ghibli-getfilm-example.json)
-- [Example](examples/studio-ghibli-listpeople-example.json)
-- [Example](examples/studio-ghibli-getperson-example.json)
-- [Example](examples/studio-ghibli-listlocations-example.json)
-- [Example](examples/studio-ghibli-getlocation-example.json)
-- [Example](examples/studio-ghibli-listspecies-example.json)
-- [Example](examples/studio-ghibli-getspecies-example.json)
-- [Example](examples/studio-ghibli-listvehicles-example.json)
-- [Example](examples/studio-ghibli-getvehicle-example.json)
-- [Plans](plans/studio-ghibli-plans-pricing.yml)
-- [Rate Limits](rate-limits/studio-ghibli-rate-limits.yml)
-- [Authentication](https://github.com/janaipakos/ghibliapi#getting-started)
+- [Studio Ghibli Film](https://apis.io/schemas/studio-ghibli/studio-ghibli-film/)
+- [Studio Ghibli Location](https://apis.io/schemas/studio-ghibli/studio-ghibli-location/)
+- [Studio Ghibli Person](https://apis.io/schemas/studio-ghibli/studio-ghibli-person/)
+- [Studio Ghibli Species](https://apis.io/schemas/studio-ghibli/studio-ghibli-species/)
+- [Studio Ghibli Vehicle](https://apis.io/schemas/studio-ghibli/studio-ghibli-vehicle/)
 
-## Common Properties
+#### JSON Structure (5)
+
+Data models expressed in JSON Structure.
+
+- [Studio Ghibli Film Structure](https://apis.io/json-structure/studio-ghibli/studio-ghibli-film-structure/)
+- [Studio Ghibli Location Structure](https://apis.io/json-structure/studio-ghibli/studio-ghibli-location-structure/)
+- [Studio Ghibli Person Structure](https://apis.io/json-structure/studio-ghibli/studio-ghibli-person-structure/)
+- [Studio Ghibli Species Structure](https://apis.io/json-structure/studio-ghibli/studio-ghibli-species-structure/)
+- [Studio Ghibli Vehicle Structure](https://apis.io/json-structure/studio-ghibli/studio-ghibli-vehicle-structure/)
+
+#### JSON-LD (1)
+
+Linked-data contexts for the provider's vocabulary.
+
+- [Studio Ghibli Context](https://apis.io/jsonld/studio-ghibli/studio-ghibli-context/)
+
+#### Vocabulary (1)
+
+The provider's domain terms, defined.
+
+- [Studio Ghibli Vocabulary](https://apis.io/vocabularies/studio-ghibli/studio-ghibli-vocabulary/)
+
+#### Examples (10)
+
+Example requests and responses.
+
+- [Studio Ghibli Getfilm Example](https://apis.io/examples/studio-ghibli/studio-ghibli-getfilm-example/)
+- [Studio Ghibli Getlocation Example](https://apis.io/examples/studio-ghibli/studio-ghibli-getlocation-example/)
+- [Studio Ghibli Getperson Example](https://apis.io/examples/studio-ghibli/studio-ghibli-getperson-example/)
+- [Studio Ghibli Getspecies Example](https://apis.io/examples/studio-ghibli/studio-ghibli-getspecies-example/)
+- [Studio Ghibli Getvehicle Example](https://apis.io/examples/studio-ghibli/studio-ghibli-getvehicle-example/)
+- [Studio Ghibli Listfilms Example](https://apis.io/examples/studio-ghibli/studio-ghibli-listfilms-example/)
+- [Studio Ghibli Listlocations Example](https://apis.io/examples/studio-ghibli/studio-ghibli-listlocations-example/)
+- [Studio Ghibli Listpeople Example](https://apis.io/examples/studio-ghibli/studio-ghibli-listpeople-example/)
+- [Studio Ghibli Listspecies Example](https://apis.io/examples/studio-ghibli/studio-ghibli-listspecies-example/)
+- [Studio Ghibli Listvehicles Example](https://apis.io/examples/studio-ghibli/studio-ghibli-listvehicles-example/)
+
+#### Collections (6)
+
+Postman and Open Collection request collections.
+
+- [Studio Ghibli API](https://apis.io/collections/studio-ghibli/open-studio-ghibli/)
+- [Studio Ghibli Films API](https://apis.io/collections/studio-ghibli/open-studio-ghibli-films-api/)
+- [Studio Ghibli Films Locations API](https://apis.io/collections/studio-ghibli/open-studio-ghibli-locations-api/)
+- [Studio Ghibli Films People API](https://apis.io/collections/studio-ghibli/open-studio-ghibli-people-api/)
+- [Studio Ghibli Films Species API](https://apis.io/collections/studio-ghibli/open-studio-ghibli-species-api/)
+- [Studio Ghibli Films Vehicles API](https://apis.io/collections/studio-ghibli/open-studio-ghibli-vehicles-api/)
+
+#### Governance rules (2)
+
+Spectral rulesets for the provider's contracts.
+
+- [Studio Ghibli — jsonschema rules](https://apis.io/rules/studio-ghibli/studio-ghibli-jsonschema-spectral-rules/)
+- [Studio Ghibli API Rules](https://apis.io/rules/studio-ghibli/studio-ghibli-rules/)
+
+#### Security (1)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Studio Ghibli Domain Security](https://apis.io/security/studio-ghibli/studio-ghibli-domain-security/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Studio Ghibli Plans Pricing](https://apis.io/plans/studio-ghibli/studio-ghibli-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Studio Ghibli Rate Limits](https://apis.io/rate-limits/studio-ghibli/studio-ghibli-rate-limits/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
 
 - [Website](https://ghibliapi.vercel.app)
-- [GitHub Repository](https://github.com/janaipakos/ghibliapi)
-- [License](https://github.com/janaipakos/ghibliapi/blob/master/LICENSE)
-- [Public APIs Listing](https://github.com/public-apis/public-apis)
-- [J S O N- L D](json-ld/studio-ghibli-context.jsonld)
-- [Spectral Rules](rules/studio-ghibli-rules.yml)
-- [Vocabulary](vocabulary/studio-ghibli-vocabulary.yml)
-- [SDK](https://github.com/sotojuan/ghibli)
-- [SDK](https://github.com/Rchristiani/totoro)
-- [SDK](https://github.com/kisscool-fr/ghibliql)
-- [SDK](https://github.com/onertipaday/ghibliapi)
-- [SDK](https://github.com/Incognito/python_studio_ghibli_api_sdk)
-- [Code Examples](https://github.com/kxvn-lx/Ghibliii)
-- [Code Examples](https://github.com/txemasv/ghibli-films)
-- [Code Examples](https://github.com/janaipakos/ghibliapi-example)
-- [Code Examples](https://github.com/mazipan/ghibli-fans)
-- [Code Examples](https://github.com/taniarascia/sandbox/tree/master/ghibli)
-- [Features](undefined)
-- [Use Cases](undefined)
-- [Integrations](undefined)
-- [Solutions](undefined)
 
-## Maintainers
+## API Evangelist rating
 
-**FN:** Kin Lane
-**Email:** kin@apievangelist.com
+**Kin Score 28.3** — thin · rubric 0.25.0 · scored 2026-10-23
+
+| Facet | Score |
+|---|---|
+| Discoverability | 78.6 |
+| Contract quality | 27.6 |
+| Contract governance | 27.3 |
+| Operational transparency | 10.5 |
+| Developer ergonomics | 38.1 |
+| Access clarity | 5.3 |
+
+**Agent readiness 27.1** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | na |
+| MCP Server | — |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | na |
+| Error Semantics | — |
+| OpenAPI Examples | documented (partial credit) |
+| Rate Limit Signal | derived (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | na |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+| Pagination Ratio | paginated |
+| Operation Distinctiveness | distinct |
+
+**Regulatory alignment 16.7** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/studio-ghibli/](https://apis.io/providers/studio-ghibli/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Studio Ghibli: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/studio-ghibli/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
